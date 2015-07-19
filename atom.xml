@@ -4,7 +4,7 @@
   <subtitle><![CDATA[用心生活，开心做游戏]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://tinyflare.com/"/>
-  <updated>2015-04-09T15:09:29.000Z</updated>
+  <updated>2015-07-19T02:49:16.000Z</updated>
   <id>http://tinyflare.com/</id>
   
   <author>
@@ -15,18 +15,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[新的起点]]></title>
-    <link href="http://tinyflare.com/2015/04/09/new_start_point/"/>
-    <id>http://tinyflare.com/2015/04/09/new_start_point/</id>
-    <published>2015-04-09T07:51:27.000Z</published>
-    <updated>2015-04-09T15:09:29.000Z</updated>
-    <content type="html"><![CDATA[<img src="/2015/04/09/new_start_point/logo.png">
-<pre><code>终有一天成为梦里的独立游戏制作人，上路，加油～
-</code></pre>]]></content>
+    <title><![CDATA[IndieAce GameJam 2015]]></title>
+    <link href="http://tinyflare.com/2015/07/19/IndieAce-gamejame-201r5/"/>
+    <id>http://tinyflare.com/2015/07/19/IndieAce-gamejame-201r5/</id>
+    <published>2015-07-19T01:45:01.000Z</published>
+    <updated>2015-07-19T02:49:16.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://img.youxiguancha.com/news/mater_3_bc0e6c5e03e5830b218b5f8abd6851f9.jpg" alt="gamejam2015 icon" title="gamejam2015"></p>
+<p><em>**</em>上周和2个小伙伴一起参加了GameJam比赛，毕竟要走独立开发这条难走的路，也算去感受了一次gamejam的氛围。总体来说感觉还不错，当有一个目标的时候，效率出奇的高，不包括睡觉用了26个小时完成了这个项目，这次比三的题目是：</p>
+<img src="/2015/07/19/IndieAce-gamejame-201r5/title.png">
+<p><em>**</em>题目很开放，第一感觉和大家一样都是这不是OOXX那个九宫格么，肯定不能这么low了，想到之前在职做商业游戏时的各种压抑突然觉得这就是个没有色彩，禁锢生活和创意牢笼，跳出牢笼这也是我辞职走独立开发想法的来源，于是破除牢笼，追寻色彩之旅来了。</p>
+<img src="/2015/07/19/IndieAce-gamejame-201r5/1.png"> <img src="/2015/07/19/IndieAce-gamejame-201r5/2.png">
+<img src="/2015/07/19/IndieAce-gamejame-201r5/3.png"> <img src="/2015/07/19/IndieAce-gamejame-201r5/4.png">
+<img src="/2015/07/19/IndieAce-gamejame-201r5/5.jpg"> <img src="/2015/07/19/IndieAce-gamejame-201r5/6.jpg">
+<h6 id="附上下载地址">附上下载地址</h6><p><a href="http://gamejam.indieace.com/Game.aspx?gamejam_id=2&amp;game_id=253" target="_blank" rel="external">http://gamejam.indieace.com/Game.aspx?gamejam_id=2&amp;game_id=253</a> </p>
+<p>**注意android版本有无音乐的bug，建议下载源码自己编译mac版本</p>
+<h6 id="github下载地址：">github下载地址：</h6><p><a href="https://github.com/lwwhb/GameJam.git" target="_blank" rel="external">https://github.com/lwwhb/GameJam.git</a></p>
+]]></content>
     <summary type="html">
-    <![CDATA[<img src="/2015/04/09/new_start_point/logo.png">
-<pre><code>终有一天成为梦里的独立游戏制作人，上路，加油～
-</code></pre>]]>
+    <![CDATA[<p><img src="http://img.youxiguancha.com/news/mater_3_bc0e6c5e03e5830b218b5f8abd6851f9.jpg" alt="gamejam2015 icon" title="gamejam2015"></p>
+]]>
+    </summary>
+    
+      <category term="gamejam" scheme="http://tinyflare.com/tags/gamejam/"/>
+    
+      <category term="感悟" scheme="http://tinyflare.com/tags/%E6%84%9F%E6%82%9F/"/>
+    
+      <category term="我的生活" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[新的起点]]></title>
+    <link href="http://tinyflare.com/2015/07/18/new_start_point/"/>
+    <id>http://tinyflare.com/2015/07/18/new_start_point/</id>
+    <published>2015-07-18T07:51:27.000Z</published>
+    <updated>2015-07-19T02:04:31.000Z</updated>
+    <content type="html"><![CDATA[<img src="/2015/07/18/new_start_point/logo.png">
+<h5 id="今天开始独立游戏之旅，上路，加油～">今天开始独立游戏之旅，上路，加油～</h5>]]></content>
+    <summary type="html">
+    <![CDATA[<img src="/2015/07/18/new_start_point/logo.png">
+<h5 id="今天开始独立游戏之旅，上路，加油～">今天开始独立游戏之旅，上路，加油～</h5>]]>
     </summary>
     
       <category term="感悟" scheme="http://tinyflare.com/tags/%E6%84%9F%E6%82%9F/"/>
