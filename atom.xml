@@ -4,7 +4,7 @@
   <subtitle><![CDATA[用心生活，开心做游戏]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://tinyflare.com/"/>
-  <updated>2015-07-19T02:49:16.000Z</updated>
+  <updated>2015-08-02T14:39:54.000Z</updated>
   <id>http://tinyflare.com/</id>
   
   <author>
@@ -13,6 +13,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[迈向独立开发的第一步]]></title>
+    <link href="http://tinyflare.com/2015/08/02/barrage-space/"/>
+    <id>http://tinyflare.com/2015/08/02/barrage-space/</id>
+    <published>2015-08-02T13:40:28.000Z</published>
+    <updated>2015-08-02T14:39:54.000Z</updated>
+    <content type="html"><![CDATA[<p>最近为了熟悉cocos2d-x引擎，做了个练手的弹幕游戏，向《几何战争》ios已经上线了, 欢迎体验</p>
+<p>itunes下载地址：<a href="https://itunes.apple.com/us/app/barrage-space/id995591428?l=zh&amp;ls=1&amp;mt=8" target="_blank" rel="external">https://itunes.apple.com/us/app/barrage-space/id995591428?l=zh&amp;ls=1&amp;mt=8</a> </p>
+<h3 id="玩法比较简单：">玩法比较简单：</h3><h4 id="1-左手操控飞行器飞行方向，右手操控涉及方向，">1.左手操控飞行器飞行方向，右手操控涉及方向，</h4><h4 id="2-游戏中会出现10种敌人：">2.游戏中会出现10种敌人：</h4><p><strong>白色圆形</strong>: 以低速追踪撞击玩家飞行器</p>
+<p><strong>彩色圆形</strong>: 以较高速追踪撞击玩家飞行器，被击毁后会分裂出6个白色圆形敌人</p>
+<p><strong>黄色三角形</strong>: 会以高速追踪撞击玩家飞行器，每间隔一段时间会向玩家发起短距离冲锋。</p>
+<p><strong>彩色三角形</strong>: 会以超高速追踪撞击玩家飞行器，每间隔一段时间会向玩家发起超远距离冲锋，非常危险。</p>
+<p><strong>绿色菱形</strong>: 会灵活躲避玩家飞行器，并不时的朝玩家发射子弹。</p>
+<p><strong>彩色菱形</strong>: 会灵活躲避玩家飞行器，并不时的朝玩家发射5个方向多重射击</p>
+<p><strong>蓝色五角星</strong>:会追踪撞击玩家飞行器，并不时的向五个角的方向发射连续弹幕</p>
+<p><strong>彩色五角星</strong>:会追踪撞击玩家飞行器，并向周围随机发射大量弹幕，要躲避这些子弹有点难度</p>
+<p><strong>红色六边形</strong>:会任意在空间中制造激光带，撞上玩家就挂了</p>
+<p><strong>彩色六边形</strong>:会在空间中制造黑洞，一旦玩家飞行器靠近，就会被吸进去。</p>
+<h4 id="3-游戏中还会出现五种辅助道具，帮助玩家生存">3.游戏中还会出现五种辅助道具，帮助玩家生存</h4><p><strong>紫色闪电</strong>: 加快飞行器射击速度</p>
+<p><strong>绿色五角星</strong>: 会使玩家飞行器拥有同时向三个方向射击的能力</p>
+<p><strong>黄色花环</strong>: 会让玩家飞行器处于无敌状态</p>
+<p><strong>蓝色表盘</strong>: 会使空间时间静止，但玩家飞行器不受影响 </p>
+<p><strong>橘色核弹</strong>: 会在玩家飞行器周围产生爆炸弹幕，帮助玩家清除敌人</p>
+<h4 id="4-_另外通过收集星辰可以升级飞行器三种能力，分别是：星辰掉落概率，道具掉落概率和增加道具效果时间">4. 另外通过收集星辰可以升级飞行器三种能力，分别是：星辰掉落概率，道具掉落概率和增加道具效果时间</h4><h3 id="截图">截图</h3><img src="/2015/08/02/barrage-space/0.png"> <img src="/2015/08/02/barrage-space/1.png"> <img src="/2015/08/02/barrage-space/2.png"> <img src="/2015/08/02/barrage-space/3.png"> <img src="/2015/08/02/barrage-space/4.png">
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近为了熟悉cocos2d-x引擎，做了个练手的弹幕游戏，向《几何战争》ios已经上线了, 欢迎体验</p>
+<p>itunes下载地址：<a href="https://itunes.apple.com/us/app/barrage-space/id995591428?l]]>
+    </summary>
+    
+      <category term="BarrageSpace" scheme="http://tinyflare.com/tags/BarrageSpace/"/>
+    
+      <category term="cocos2d-x" scheme="http://tinyflare.com/tags/cocos2d-x/"/>
+    
+      <category term="我的游戏" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[IndieAce GameJam 2015]]></title>
