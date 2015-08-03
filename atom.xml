@@ -4,7 +4,7 @@
   <subtitle><![CDATA[用心生活，开心做游戏]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://tinyflare.com/"/>
-  <updated>2015-08-02T14:41:04.000Z</updated>
+  <updated>2015-08-03T12:06:19.000Z</updated>
   <id>http://tinyflare.com/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[北京夕阳]]></title>
+    <link href="http://tinyflare.com/2015/08/03/beijingfengjing/"/>
+    <id>http://tinyflare.com/2015/08/03/beijingfengjing/</id>
+    <published>2015-08-03T12:02:43.000Z</published>
+    <updated>2015-08-03T12:06:19.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="北京的美总在不经意间～，不仅夕阳美，更出了彩虹～下一个游戏就是与彩虹有关～好兆头～">北京的美总在不经意间～，不仅夕阳美，更出了彩虹～下一个游戏就是与彩虹有关～好兆头～</h4><img src="/2015/08/03/beijingfengjing/1.jpg"> <img src="/2015/08/03/beijingfengjing/2.jpg"> ]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="北京的美总在不经意间～，不仅夕阳美，更出了彩虹～下一个游戏就是与彩虹有关～好兆头～">北京的美总在不经意间～，不仅夕阳美，更出了彩虹～下一个游戏就是与彩虹有关～好兆头～</h4><img src="/2015/08/03/beijingfengjing/1.jpg]]>
+    </summary>
+    
+      <category term="北京" scheme="http://tinyflare.com/tags/%E5%8C%97%E4%BA%AC/"/>
+    
+      <category term="夕阳" scheme="http://tinyflare.com/tags/%E5%A4%95%E9%98%B3/"/>
+    
+      <category term="我的生活" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[迈向独立开发的第一步]]></title>
