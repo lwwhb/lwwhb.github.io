@@ -4,7 +4,7 @@
   <subtitle><![CDATA[用心生活，开心做游戏]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://tinyflare.com/"/>
-  <updated>2015-08-03T12:12:20.000Z</updated>
+  <updated>2015-09-02T07:10:27.000Z</updated>
   <id>http://tinyflare.com/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[《彩虹尽头》上线了]]></title>
+    <link href="http://tinyflare.com/2015/09/02/rainbow-avaliable/"/>
+    <id>http://tinyflare.com/2015/09/02/rainbow-avaliable/</id>
+    <published>2015-09-02T07:01:01.000Z</published>
+    <updated>2015-09-02T07:10:27.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="28天开发完成，iTunes与GooglePlay_齐上线～～～">28天开发完成，iTunes与GooglePlay 齐上线～～～</h4><img src="/2015/09/02/rainbow-avaliable/xuan_android_cn.png">
+<p>iTunes下载地址: <a href="https://itunes.apple.com/us/app/rainbows-end/id1031110631?l=zh&amp;ls=1&amp;mt=8" target="_blank" rel="external">https://itunes.apple.com/us/app/rainbows-end/id1031110631?l=zh&amp;ls=1&amp;mt=8</a></p>
+<p>GooglePlay下载地址: <a href="https://play.google.com/store/apps/details?id=com.wanax.mazejump" target="_blank" rel="external">https://play.google.com/store/apps/details?id=com.wanax.mazejump</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="28天开发完成，iTunes与GooglePlay_齐上线～～～">28天开发完成，iTunes与GooglePlay 齐上线～～～</h4><img src="/2015/09/02/rainbow-avaliable/xuan_android_cn.png">]]>
+    </summary>
+    
+      <category term="Rainbow&#39;s End" scheme="http://tinyflare.com/tags/Rainbow-s-End/"/>
+    
+      <category term="cocos2d-x" scheme="http://tinyflare.com/tags/cocos2d-x/"/>
+    
+      <category term="我的游戏" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[北京夕阳]]></title>
