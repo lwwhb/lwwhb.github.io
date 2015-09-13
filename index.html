@@ -136,6 +136,180 @@
           
           
             
+              <a class="post-title-link" href="/2015/09/13/cocos2dxvoxel/">
+                用cocos2dx3.6打造体素游戏
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            发表于 2015-09-13
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类于
+              
+                <a href="/categories/原创分享/">原创分享</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/09/13/cocos2dxvoxel/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/13/cocos2dxvoxel/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <h3 id="什么是体素游戏">什么是体素游戏</h3><ul>
+<li>最大名鼎鼎的当然是《Minecraft》(《我的世界》), 虽然最常冠以沙盒游戏的的分类，但整个世界、角色等都是采用立方体体素打造的，我们也将其分类在体素游戏之内，Voxel(体素)是voluempixel的缩写，是指构成由立体渲染对象构成世界的最小单位。体素不光是单指立方体，也包括各种其他几何体，比如：球体、圆柱体、甚至是复杂几何体的迭代形式。如下图场景就是分别用球体与圆柱体打造：</li>
+</ul>
+<img src="/2015/09/13/cocos2dxvoxel/snap0000.png"> <img src="/2015/09/13/cocos2dxvoxel/snap0001.png">
+<ul>
+<li><p>当然随着《Minecraft》的风靡，体素游戏发展到了更高高度，各种体素工具和体素游戏引擎也逐渐出现，虽然不是作为本文重点，但简单介绍2个体素引擎（体素工具在本文的工具篇再详细介绍）:</p>
+<ol>
+<li><p>VoxelFarm Engine (简称VFE): <a href="http:http://voxelfarm.com" target="_blank" rel="external">http:http://voxelfarm.com</a></p>
+</li>
+<li><p>Atomontage Engine    (无限细节技术): <a href="http://www.atomontage.com" target="_blank" rel="external">http://www.atomontage.com</a></p>
+</li>
+<li><p>Voxlap Engine(一个牛人在93年就开始开发的小引擎): <a href="http://advsys.net/ken/voxlap/voxlap05.htm" target="_blank" rel="external">http://advsys.net/ken/voxlap/voxlap05.htm</a></p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="打造一个体素游戏">打造一个体素游戏</h3><ul>
+<li>言归正传，本文意在讲述如何用简单快捷的方式打造我们自己的体素游戏，由于手机的火爆，很多简单的游戏也在手机上取得了成功，这类游戏都有着极简的设计和明朗色块的体素，这其中比较有代表性的就是《天天过马路》了，当然也有用2D像素Isometric化模拟的体素游戏，如《cloud path》, 出于追随潮流我也开始打造了一个自己的体素游戏，先来做个广告：《Rainbow’ End》（《彩虹尽头》）28天开发完成，已经在itunes和googleplay上线，欢迎体验。</li>
+</ul>
+<img src="/2015/09/13/cocos2dxvoxel/xuan_android_cn.png">    
+<ul>
+<li><p>iTunes下载地址: <a href="https://itunes.apple.com/cn/app/rainbows-end/id1031110631" target="_blank" rel="external">https://itunes.apple.com/cn/app/rainbows-end/id1031110631</a></p>
+</li>
+<li><p>GooglePlay下载地址: <a href="https://play.google.com/store/apps/details?id=com.wanax.mazejump" target="_blank" rel="external">https://play.google.com/store/apps/details?id=com.wanax.mazejump</a></p>
+</li>
+</ul>
+<h3 id="本文也是针对这款游戏从工具、引擎、表现方面给大家来讲述：">本文也是针对这款游戏从工具、引擎、表现方面给大家来讲述：</h3><h4 id="工具篇">工具篇</h4><ul>
+<li><p>制作体素的工具有很多，当然也可以用3dmax,maya等传统建模工具制作，但不符合快速开发的原则，所以为了在一个月内开发完成，只能花时间去寻找更多的工具。</p>
+<ol>
+<li><p>Painter3D <a href="http://www.paint3d.net/" target="_blank" rel="external">http://www.paint3d.net/</a></p>
+</li>
+<li><p>Sproxel <a href="http://sproxel.blogspot.com.br/" target="_blank" rel="external">http://sproxel.blogspot.com.br/</a></p>
+</li>
+<li><p>Qubicle Constructor <a href="http://www.minddesk.com/qubicle_constructor.php" target="_blank" rel="external">http://www.minddesk.com/qubicle_constructor.php</a></p>
+</li>
+<li><p>VoxelShop <a href="https://blackflux.com/index.php" target="_blank" rel="external">https://blackflux.com/index.php</a></p>
+</li>
+<li><p>Qblock (在线制作,可以看到其他玩友上传的作品来寻找灵感) <a href="http://kyucon.com/qblock/" target="_blank" rel="external">http://kyucon.com/qblock/</a></p>
+</li>
+<li><p>MagicaVoxel Editor (<code>本文使用，重点推荐</code>) <a href="https://voxel.codeplex.com/" target="_blank" rel="external">https://voxel.codeplex.com/</a></p>
+</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">本文采用 MagicalVolex Editor 0.93 进行开发 （目前版本0.96.3）</span><br><span class="line">注意：0.93更早的版本没有对相同体素导出时进行顶点优化，会导致游戏中顶点数偏高，游戏性能下降。</span><br><span class="line">MagicalVolex Editor工具使用教程本文不讲，可参考网站提供的教学视频学习。</span><br></pre></td></tr></table></figure>
+<img src="/2015/09/13/cocos2dxvoxel/voxel1.png">
+<ul>
+<li>将通过MagicalVolex Editor建好的体素模型通过export导出选项中的obj导出，再通过3dMax或(Blender3D, Cinema4D, Maya)等传统建模工具的任何一种将obj文件导出成fbx文件备用。（当然本身一些引擎是支持obj文件格式的，包括cocos2dx，之所以转换下是为了使用cocos2dx下的模型的c3b或c3t格式，考虑以后引擎升级可能的模型优化）。</li>
+</ul>
+<h4 id="引擎篇">引擎篇</h4><ul>
+<li><p>U3D + MagicaVoxel Editor是可以非常简单的进行使用开发的，本文不做赘述，由于正版U3D发行问题和作者本身也想测试下cocos2dx 3D部分的性能，所以选择了cocos2dx 3.6版本进行。</p>
+</li>
+<li><p>首先是模型转化，将fbx文件通过cocos2dx提供的工具fbx-conv进行转化，生成c3b模型文件和纹理文件（注意：这里可以对文件进行优化，可以让游戏中所有使用的模型在MagicalVolex Editor下使用相同的调色版，这样导出的索引色是相同的，这就意味着所有模型可以公用一张纹理文件，可以大大减少io读取时间和显存使用。）</p>
+</li>
+<li><p>然后初始化3D场景，包括创建天空盒，创建3D摄像机，创建天光，给场景添加灯光，是为了弥补体素对象色彩单一导致的显示比较平的问题，添加灯光来区别体素不同面的间隔，相关代码如下：</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建摄像机</span></span><br><span class="line">m_pMainCamera = Camera::createPerspective(<span class="number">45</span>, size.width/size.height, <span class="number">1</span>, <span class="number">5000</span>);</span><br><span class="line"><span class="keyword">if</span>(!m_pMainCamera)</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">Vec3 camPos = Vec3(<span class="number">0</span>,<span class="number">150.0f</span>*cosf(M_PI/<span class="number">2.8f</span>),<span class="number">150.0f</span>*sinf(M_PI/<span class="number">2.8f</span>));</span><br><span class="line">Vec3 lookAt = Vec3(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">m_pMainCamera-&gt;setPosition3D(camPos);</span><br><span class="line">m_pMainCamera-&gt;lookAt(lookAt);</span><br><span class="line"><span class="keyword">this</span>-&gt;addChild(m_pMainCamera);</span><br><span class="line">m_pMainCamera-&gt;setCameraFlag(CameraFlag::USER1);</span><br><span class="line">    </span><br><span class="line"><span class="comment">//创建天空盒子</span></span><br><span class="line">Skybox* skyBox = Skybox::create(<span class="string">"sky4.png"</span>, <span class="string">"sky4.png"</span>, <span class="string">"sky4.png"</span>, <span class="string">"sky4.png"</span>, <span class="string">"sky4.png"</span>, <span class="string">"sky4.png"</span>);</span><br><span class="line"><span class="keyword">if</span>(!skyBox)</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">skyBox-&gt;setScale(<span class="number">1000</span>);    <span class="comment">///注意大于创建摄像机的最远面</span></span><br><span class="line">skyBox-&gt;setCameraMask((<span class="keyword">unsigned</span> <span class="keyword">short</span>)CameraFlag::USER1);   <span class="comment">///设置只能被创建的摄像机看到</span></span><br><span class="line">skyBox-&gt;setGlobalZOrder(-<span class="number">1</span>);</span><br><span class="line"><span class="keyword">this</span>-&gt;addChild(skyBox);</span><br><span class="line">    </span><br><span class="line"><span class="comment">//创建环境光</span></span><br><span class="line">AmbientLight* ambientLight = AmbientLight::create(Color3B(<span class="number">150</span>, <span class="number">150</span>, <span class="number">150</span>));</span><br><span class="line"><span class="keyword">this</span>-&gt;addChild(ambientLight);</span><br><span class="line"><span class="comment">//设置天光</span></span><br><span class="line">DirectionLight* directionLight = DirectionLight::create(Vec3(-<span class="number">2</span>, -<span class="number">4</span>, -<span class="number">3</span>), Color3B(<span class="number">158</span>, <span class="number">158</span>, <span class="number">158</span>));</span><br><span class="line"><span class="keyword">this</span>-&gt;addChild(directionLight);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>初始化场景后，开始加载体素模型，为了增加体素表现可以，为体素增加描边效果。</li>
+</ul>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///创建无描边体素对象</span></span><br><span class="line">Sprite3D<span class="subst">*</span> spriteWithoutOutLine <span class="subst">=</span> Sprite3D<span class="tag">::create</span>(<span class="string">"bear.c3b"</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="subst">!</span>spriteWithoutOutLine)</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">spriteWithoutOutLine<span class="subst">-&gt;</span>setPosition3D(Vec3(<span class="subst">-</span><span class="number">50</span>,<span class="number">0</span>,<span class="number">0</span>));</span><br><span class="line">spriteWithoutOutLine<span class="subst">-&gt;</span>setRotation3D(Vec3(<span class="number">0</span>,<span class="subst">-</span><span class="number">140</span>,<span class="number">0</span>));</span><br><span class="line">spriteWithoutOutLine<span class="subst">-&gt;</span>setCameraMask((unsigned short)CameraFlag<span class="tag">::USER1</span>);</span><br><span class="line"></span><br><span class="line">spriteWithoutOutLine<span class="subst">-&gt;</span>setForceDepthWrite(<span class="literal">true</span>); <span class="comment">///设置强制3D对象进行深度检测，如果场景中有半透明物体的话</span></span><br><span class="line">this<span class="subst">-&gt;</span>addChild(spriteWithoutOutLine);</span><br><span class="line">    </span><br><span class="line"><span class="comment">///创建有描边体素对象</span></span><br><span class="line">EffectSprite3D<span class="subst">*</span> spriteWitOutLine <span class="subst">=</span> EffectSprite3D<span class="tag">::create</span>(<span class="string">"girl1.c3b"</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="subst">!</span>spriteWitOutLine)</span><br><span class="line">   <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">spriteWitOutLine<span class="subst">-&gt;</span>setPosition3D(Vec3(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>));</span><br><span class="line">spriteWitOutLine<span class="subst">-&gt;</span>setRotation3D(Vec3(<span class="number">0</span>,<span class="subst">-</span><span class="number">150</span>,<span class="number">0</span>));</span><br><span class="line">spriteWitOutLine<span class="subst">-&gt;</span>setCameraMask((unsigned short)CameraFlag<span class="tag">::USER1</span>);</span><br><span class="line">    </span><br><span class="line">spriteWithoutOutLine<span class="subst">-&gt;</span>setForceDepthWrite(<span class="literal">true</span>); <span class="comment">///设置强制3D对象进行深度检测，如果场景中有半透明物体的话</span></span><br><span class="line">this<span class="subst">-&gt;</span>addChild(spriteWitOutLine);</span><br><span class="line">    </span><br><span class="line">OutlineEffect3D<span class="subst">*</span> outline <span class="subst">=</span> OutlineEffect3D<span class="tag">::create</span>();</span><br><span class="line">outline<span class="subst">-&gt;</span>setOutlineColor(Vec3(<span class="number">0.3</span>f, <span class="number">0.3</span>f, <span class="number">0.3</span>f));</span><br><span class="line">outline<span class="subst">-&gt;</span>setOutlineWidth(<span class="number">0.03</span>f);</span><br><span class="line">spriteWitOutLine<span class="subst">-&gt;</span>addEffect(outline, <span class="number">3</span>); <span class="comment">///设置外描边</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在cocos2dx3.6中添加了针对particle3D的支持，既然做3D游戏，粒子效果也是必不可少的，遗憾的是3.6中粒子部分还有相关bug和资源路径读取相对写死的情况，所以本文例子针对paritcle3D部分对引擎做了相关改动，具体可见引擎源码部分打入的lwwhb标记查看。3D粒子对象创建相关代码如下:</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> HelloWorld::spawnExplosion(<span class="keyword">const</span> cocos2d::Vec3&amp; pos)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">auto</span> explosion = PUParticleSystem3D::create(<span class="string">"explosionSystem.pu"</span>);</span><br><span class="line">    <span class="keyword">if</span>(!explosion)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    explosion-&gt;setCameraMask((<span class="keyword">unsigned</span> <span class="keyword">short</span>)CameraFlag::USER1);</span><br><span class="line">    explosion-&gt;setPosition3D(pos);</span><br><span class="line">    explosion-&gt;setScale(<span class="number">2.0f</span>);</span><br><span class="line">    <span class="keyword">this</span>-&gt;addChild(explosion);</span><br><span class="line">    explosion-&gt;startParticleSystem();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>彩虹对象采用了ParitcleUniverse的条带系统实现，对象的定义和实现如下：</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> RibbonTrail : <span class="keyword">public</span> cocos2d::Node, <span class="keyword">public</span> cocos2d::BlendProtocol</span><br><span class="line">&#123;</span><br><span class="line">    RibbonTrail();</span><br><span class="line">    <span class="keyword">virtual</span> ~RibbonTrail();</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">static</span> RibbonTrail* create(<span class="keyword">const</span> std::<span class="built_in">string</span> &amp;textureFile, <span class="keyword">float</span> width, <span class="keyword">float</span> length);</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">initWithFile</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;path, <span class="keyword">float</span> width, <span class="keyword">float</span> length)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">float</span> delta)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(cocos2d::Renderer* renderer, <span class="keyword">const</span> cocos2d::Mat4&amp; transform, <span class="keyword">uint32_t</span> flags)</span> override</span>;</span><br><span class="line">    <span class="comment">// overrides</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">setBlendFunc</span><span class="params">(<span class="keyword">const</span> cocos2d::BlendFunc &amp;blendFunc)</span> override</span>;</span><br><span class="line">    <span class="keyword">virtual</span> <span class="keyword">const</span> cocos2d::BlendFunc &amp;getBlendFunc() <span class="keyword">const</span> override;</span><br><span class="line">    cocos2d::PURibbonTrail* getTrail() <span class="keyword">const</span> &#123; <span class="keyword">return</span> m_pTrail; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    cocos2d::PURibbonTrail*             m_pTrail;</span><br><span class="line">    cocos2d::BlendFunc                  m_BlendFunc;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">RibbonTrail* RibbonTrail::create(<span class="keyword">const</span> std::<span class="built_in">string</span> &amp;textureFile, <span class="keyword">float</span> width, <span class="keyword">float</span> length)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (textureFile.length() &lt; <span class="number">4</span>)</span><br><span class="line">        CCASSERT(<span class="keyword">false</span>, <span class="string">"invalid filename for texture file"</span>);</span><br><span class="line">    <span class="keyword">auto</span> ribbonTrail = <span class="keyword">new</span> (std::nothrow) RibbonTrail();</span><br><span class="line">    <span class="keyword">if</span> (ribbonTrail &amp;&amp; ribbonTrail-&gt;initWithFile(textureFile, width, length))</span><br><span class="line">    &#123;</span><br><span class="line">        ribbonTrail-&gt;autorelease();</span><br><span class="line">        <span class="keyword">return</span> ribbonTrail;</span><br><span class="line">    &#125;</span><br><span class="line">    CC_SAFE_DELETE(ribbonTrail);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">nullptr</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">RibbonTrail::RibbonTrail()</span><br><span class="line">:m_pTrail(<span class="keyword">nullptr</span>)</span><br><span class="line">&#123;</span><br><span class="line">    m_BlendFunc = &#123;GL_SRC_ALPHA , GL_ONE&#125;;</span><br><span class="line">&#125;</span><br><span class="line">RibbonTrail::~RibbonTrail()</span><br><span class="line">&#123;</span><br><span class="line">    m_pTrail = <span class="keyword">nullptr</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">bool</span> RibbonTrail::initWithFile(<span class="keyword">const</span> std::<span class="built_in">string</span> &amp;path, <span class="keyword">float</span> width, <span class="keyword">float</span> length )</span><br><span class="line">&#123;</span><br><span class="line">    m_pTrail = <span class="keyword">new</span> (std::nothrow) PURibbonTrail(<span class="string">"RibbonTrail"</span>, path);</span><br><span class="line">    <span class="keyword">if</span>(m_pTrail)</span><br><span class="line">    &#123;</span><br><span class="line">        m_pTrail-&gt;setNumberOfChains(<span class="number">1</span>);</span><br><span class="line">        m_pTrail-&gt;setMaxChainElements(<span class="number">100</span>);</span><br><span class="line">        m_pTrail-&gt;setTrailLength(length);</span><br><span class="line">        m_pTrail-&gt;setUseVertexColours(<span class="keyword">true</span>);</span><br><span class="line">        m_pTrail-&gt;setInitialColour(<span class="number">0</span>, Vec4(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>));</span><br><span class="line">        <span class="comment">//m_pTrail-&gt;setColourChange(0, Vec4(0.8, 0.8, 0.8, 0.8));</span></span><br><span class="line">        m_pTrail-&gt;setInitialWidth(<span class="number">0</span>, width);</span><br><span class="line">        m_pTrail-&gt;setDepthTest(<span class="keyword">true</span>);</span><br><span class="line">        m_pTrail-&gt;setDepthWrite(<span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> RibbonTrail::update(<span class="keyword">float</span> delta)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(m_pTrail)</span><br><span class="line">        m_pTrail-&gt;update(delta);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> RibbonTrail::draw(Renderer* renderer, <span class="keyword">const</span> Mat4&amp; transform, <span class="keyword">uint32_t</span> flags)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(m_pTrail)</span><br><span class="line">        m_pTrail-&gt;render(renderer, transform, m_BlendFunc);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> BlendFunc&amp; RibbonTrail::getBlendFunc() <span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> m_BlendFunc;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> RibbonTrail::setBlendFunc(<span class="keyword">const</span> BlendFunc &amp;blendFunc)</span><br><span class="line">&#123;</span><br><span class="line">    m_BlendFunc = blendFunc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2015/09/13/cocos2dxvoxel/snap0003.png">
+<ul>
+<li>相关粒子全部代码下载：<a href="https://github.com/lwwhb/cocos2dx3.6_voxel_tutorial" target="_blank" rel="external">https://github.com/lwwhb/cocos2dx3.6_voxel_tutorial</a></li>
+</ul>
+<h4 id="后记">后记</h4><ul>
+<li>以目前cocos2dx3.6版本提供的3D部分封装，是可以完全满足一个简单3D游戏的需求，而且包体相对U3D实现要小得多，但引擎部分仍然有很多地方需要加强，比如材质系统，没有材质系统的渲染，只能针对每个对象手动设置shader实现。另外cocos2dx中针对Sprite3D的合批操作也没有办法实现，需要修改引擎或采用模型的instancing来去进行速度优化。但总体来说的性能一个简单的体素游戏cocos2dx是可以应付的，大家可以放心使用。</li>
+</ul>
+<p><code>本文版权归tinyflare.com所有，欢迎转载，但必须保留此段声明，且在文章页面明显位置给出原文连接.</code></p>
+
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Rainbow-s-End/">
+                #Rainbow's End
+              </a>
+            
+              <a href="/tags/cocos2d-x/">
+                #cocos2d-x
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/02/rainbow-avaliable/">
                 《彩虹尽头》上线了
               </a>
@@ -661,7 +835,7 @@
       <p class="site-description motion-element">愉快生活，开心做游戏</p>
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </div>
         <div class="site-state-item site-state-tags">

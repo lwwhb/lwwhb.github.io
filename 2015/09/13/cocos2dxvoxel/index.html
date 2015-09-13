@@ -1,26 +1,165 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[TinyFlare]]></title>
-  <subtitle><![CDATA[用心生活，开心做游戏]]></subtitle>
-  <link href="/atom.xml" rel="self"/>
-  <link href="http://tinyflare.com/"/>
-  <updated>2015-09-13T10:09:12.000Z</updated>
-  <id>http://tinyflare.com/</id>
+<!doctype html>
+<html class="theme-next use-motion theme-next-next">
+<head>
   
-  <author>
-    <name><![CDATA[Irenicus]]></name>
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.0"/>
+
+
+    <meta name="description" content="愉快生活，开心做游戏" />
+
+
+
+	<meta name="keywords" content="Rainbow's End,cocos2d-x," />
+
+  <title> 用cocos2dx3.6打造体素游戏 // TinyFlare </title>
+</head>
+
+<body>
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">TinyFlare</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
     
-  </author>
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首页
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-categories">
+        <a href="/categories">
+          <i class="menu-item-icon icon-categories"></i> <br />
+          分类
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          归档
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          标签
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-about">
+        <a href="/about">
+          <i class="menu-item-icon icon-about"></i> <br />
+          关于
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+            
+          
+
+          <div id="posts" class="posts-expand">
+            
   
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[用cocos2dx3.6打造体素游戏]]></title>
-    <link href="http://tinyflare.com/2015/09/13/cocos2dxvoxel/"/>
-    <id>http://tinyflare.com/2015/09/13/cocos2dxvoxel/</id>
-    <published>2015-09-13T01:40:56.000Z</published>
-    <updated>2015-09-13T10:09:12.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="什么是体素游戏">什么是体素游戏</h3><ul>
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              用cocos2dx3.6打造体素游戏
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            发表于 2015-09-13
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类于
+              
+                <a href="/categories/原创分享/">原创分享</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/09/13/cocos2dxvoxel/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/13/cocos2dxvoxel/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          <h3 id="什么是体素游戏">什么是体素游戏</h3><ul>
 <li>最大名鼎鼎的当然是《Minecraft》(《我的世界》), 虽然最常冠以沙盒游戏的的分类，但整个世界、角色等都是采用立方体体素打造的，我们也将其分类在体素游戏之内，Voxel(体素)是voluempixel的缩写，是指构成由立体渲染对象构成世界的最小单位。体素不光是单指立方体，也包括各种其他几何体，比如：球体、圆柱体、甚至是复杂几何体的迭代形式。如下图场景就是分别用球体与圆柱体打造：</li>
 </ul>
 <img src="/2015/09/13/cocos2dxvoxel/snap0000.png"> <img src="/2015/09/13/cocos2dxvoxel/snap0001.png">
@@ -98,146 +237,723 @@
 <li>以目前cocos2dx3.6版本提供的3D部分封装，是可以完全满足一个简单3D游戏的需求，而且包体相对U3D实现要小得多，但引擎部分仍然有很多地方需要加强，比如材质系统，没有材质系统的渲染，只能针对每个对象手动设置shader实现。另外cocos2dx中针对Sprite3D的合批操作也没有办法实现，需要修改引擎或采用模型的instancing来去进行速度优化。但总体来说的性能一个简单的体素游戏cocos2dx是可以应付的，大家可以放心使用。</li>
 </ul>
 <p><code>本文版权归tinyflare.com所有，欢迎转载，但必须保留此段声明，且在文章页面明显位置给出原文连接.</code></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="什么是体素游戏">什么是体素游戏</h3><ul>
-<li>最大名鼎鼎的当然是《Minecraft》(《我的世界》), 虽然最常冠以沙盒游戏的的分类，但整个世界、角色等都是采用立方体体素打造的，我们也将其分类在体素游戏之内，Voxel(体素)是voluempixe]]>
-    </summary>
+
+        
+      </div>
     
-      <category term="Rainbow&#39;s End" scheme="http://tinyflare.com/tags/Rainbow-s-End/"/>
+
     
-      <category term="cocos2d-x" scheme="http://tinyflare.com/tags/cocos2d-x/"/>
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Rainbow-s-End/">
+                #Rainbow's End
+              </a>
+            
+              <a href="/tags/cocos2d-x/">
+                #cocos2d-x
+              </a>
+            
+          </div>
+        
+
+        
+          <div class="post-nav">
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2015/09/02/rainbow-avaliable/">《彩虹尽头》上线了</a>
+              
+            </div>
+          </div>
+        
+
+        
+        
+      </div>
     
-      <category term="原创分享" scheme="http://tinyflare.com/categories/%E5%8E%9F%E5%88%9B%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
+  </div>
+
+
+
   
-  <entry>
-    <title><![CDATA[《彩虹尽头》上线了]]></title>
-    <link href="http://tinyflare.com/2015/09/02/rainbow-avaliable/"/>
-    <id>http://tinyflare.com/2015/09/02/rainbow-avaliable/</id>
-    <published>2015-09-02T07:01:01.000Z</published>
-    <updated>2015-09-02T08:05:42.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="28天开发完成，iTunes与GooglePlay_齐上线～～～">28天开发完成，iTunes与GooglePlay 齐上线～～～</h4><img src="/2015/09/02/rainbow-avaliable/xuan_android_cn.png">
-<p>iTunes下载地址:<br>英文: <a href="https://itunes.apple.com/us/app/rainbows-end/id1031110631" target="_blank" rel="external">https://itunes.apple.com/us/app/rainbows-end/id1031110631</a><br>中文: <a href="https://itunes.apple.com/cn/app/rainbows-end/id1031110631" target="_blank" rel="external">https://itunes.apple.com/cn/app/rainbows-end/id1031110631</a></p>
-<p>GooglePlay下载地址: <a href="https://play.google.com/store/apps/details?id=com.wanax.mazejump" target="_blank" rel="external">https://play.google.com/store/apps/details?id=com.wanax.mazejump</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h4 id="28天开发完成，iTunes与GooglePlay_齐上线～～～">28天开发完成，iTunes与GooglePlay 齐上线～～～</h4><img src="/2015/09/02/rainbow-avaliable/xuan_android_cn.png">]]>
-    </summary>
-    
-      <category term="Rainbow&#39;s End" scheme="http://tinyflare.com/tags/Rainbow-s-End/"/>
-    
-      <category term="cocos2d-x" scheme="http://tinyflare.com/tags/cocos2d-x/"/>
-    
-      <category term="我的游戏" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
+    <div class="comments" id="comments">
+      
+        <div class="ds-thread" data-thread-key="2015/09/13/cocos2dxvoxel/"
+             data-title="用cocos2dx3.6打造体素游戏" data-url="http://tinyflare.com/2015/09/13/cocos2dxvoxel/">
+        </div>
+
+      
+    </div>
   
-  <entry>
-    <title><![CDATA[北京夕阳]]></title>
-    <link href="http://tinyflare.com/2015/08/03/beijingfengjing/"/>
-    <id>http://tinyflare.com/2015/08/03/beijingfengjing/</id>
-    <published>2015-08-03T12:02:43.000Z</published>
-    <updated>2015-08-03T12:12:20.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="北京的美总在不经意间～，不仅夕阳美，更出了彩虹～下一个游戏就是与彩虹有关～好兆头～">北京的美总在不经意间～，不仅夕阳美，更出了彩虹～下一个游戏就是与彩虹有关～好兆头～</h4><img src="/2015/08/03/beijingfengjing/1.jpg"> <img src="/2015/08/03/beijingfengjing/2.jpg"> <img src="/2015/08/03/beijingfengjing/3.jpg">]]></content>
-    <summary type="html">
-    <![CDATA[<h4 id="北京的美总在不经意间～，不仅夕阳美，更出了彩虹～下一个游戏就是与彩虹有关～好兆头～">北京的美总在不经意间～，不仅夕阳美，更出了彩虹～下一个游戏就是与彩虹有关～好兆头～</h4><img src="/2015/08/03/beijingfengjing/1.jpg]]>
-    </summary>
+
+          </div>
+
+          
+        </div>
+
+        
+<div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
     
-      <category term="北京" scheme="http://tinyflare.com/tags/%E5%8C%97%E4%BA%AC/"/>
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview">
+          站点概览
+        </li>
+      </ul>
     
-      <category term="夕阳" scheme="http://tinyflare.com/tags/%E5%A4%95%E9%98%B3/"/>
+
+    <div class="site-overview">
+      <div class="site-author motion-element">
+        <img class="site-author-image" src="https://avatars2.githubusercontent.com/u/1457886?v=3&s=460" alt="Irenicus" />
+        <p class="site-author-name">Irenicus</p>
+      </div>
+      <p class="site-description motion-element">愉快生活，开心做游戏</p>
+      <div class="site-state motion-element">
+        <div class="site-state-item site-state-posts">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </div>
+        <div class="site-state-item site-state-tags">
+            <span class="site-state-item-count">7</span>
+            <span class="site-state-item-name">标签</span>
+        </div>
+        <div class="site-state-item site-state-pages">
+            <span class="site-state-item-count">3</span>
+            <span class="site-state-item-name">页面</span>
+        </div>
+      </div>
+
+      
+        <div class="feed-link motion-element">
+          <a href="/atom.xml">
+            <i class="menu-item-icon icon-feed"></i>
+            RSS
+          </a>
+        </div>
+      
+
+      <div class="links-of-author motion-element">
+        
+      </div>
+
+      
+      
+        <div class="cc-license motion-element">
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+            <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+          </a>
+        </div>
+      
+
+    </div>
+
     
-      <category term="我的生活" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB/"/>
+      <div class="post-toc-wrap sidebar-panel-active">
+        <div class="post-toc-indicator-top post-toc-indicator"></div>
+        <div class="post-toc">
+          
+          
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是体素游戏"><span class="nav-number">1.</span> <span class="nav-text">什么是体素游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打造一个体素游戏"><span class="nav-number">2.</span> <span class="nav-text">打造一个体素游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文也是针对这款游戏从工具、引擎、表现方面给大家来讲述："><span class="nav-number">3.</span> <span class="nav-text">本文也是针对这款游戏从工具、引擎、表现方面给大家来讲述：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#工具篇"><span class="nav-number">3.1.</span> <span class="nav-text">工具篇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引擎篇"><span class="nav-number">3.2.</span> <span class="nav-text">引擎篇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后记"><span class="nav-number">3.3.</span> <span class="nav-text">后记</span></a></li></ol></li></ol></div>
+          
+        </div>
+        <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+      </div>
     
-  </entry>
+
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
   
-  <entry>
-    <title><![CDATA[迈向独立开发的第一步]]></title>
-    <link href="http://tinyflare.com/2015/08/02/barrage-space/"/>
-    <id>http://tinyflare.com/2015/08/02/barrage-space/</id>
-    <published>2015-08-02T13:40:28.000Z</published>
-    <updated>2015-08-02T14:41:04.000Z</updated>
-    <content type="html"><![CDATA[<p>最近为了熟悉cocos2d-x引擎，做了个练手的弹幕游戏，向《Space Wars》《几何战争》致敬，ios已经上线了, 欢迎体验</p>
-<p>itunes下载地址：<a href="https://itunes.apple.com/us/app/barrage-space/id995591428?l=zh&amp;ls=1&amp;mt=8" target="_blank" rel="external">https://itunes.apple.com/us/app/barrage-space/id995591428?l=zh&amp;ls=1&amp;mt=8</a> </p>
-<h3 id="玩法比较简单：">玩法比较简单：</h3><h4 id="1-左手操控飞行器飞行方向，右手操控涉及方向，">1.左手操控飞行器飞行方向，右手操控涉及方向，</h4><h4 id="2-游戏中会出现10种敌人：">2.游戏中会出现10种敌人：</h4><p><strong>白色圆形</strong>: 以低速追踪撞击玩家飞行器</p>
-<p><strong>彩色圆形</strong>: 以较高速追踪撞击玩家飞行器，被击毁后会分裂出6个白色圆形敌人</p>
-<p><strong>黄色三角形</strong>: 会以高速追踪撞击玩家飞行器，每间隔一段时间会向玩家发起短距离冲锋。</p>
-<p><strong>彩色三角形</strong>: 会以超高速追踪撞击玩家飞行器，每间隔一段时间会向玩家发起超远距离冲锋，非常危险。</p>
-<p><strong>绿色菱形</strong>: 会灵活躲避玩家飞行器，并不时的朝玩家发射子弹。</p>
-<p><strong>彩色菱形</strong>: 会灵活躲避玩家飞行器，并不时的朝玩家发射5个方向多重射击</p>
-<p><strong>蓝色五角星</strong>:会追踪撞击玩家飞行器，并不时的向五个角的方向发射连续弹幕</p>
-<p><strong>彩色五角星</strong>:会追踪撞击玩家飞行器，并向周围随机发射大量弹幕，要躲避这些子弹有点难度</p>
-<p><strong>红色六边形</strong>:会任意在空间中制造激光带，撞上玩家就挂了</p>
-<p><strong>彩色六边形</strong>:会在空间中制造黑洞，一旦玩家飞行器靠近，就会被吸进去。</p>
-<h4 id="3-游戏中还会出现五种辅助道具，帮助玩家生存">3.游戏中还会出现五种辅助道具，帮助玩家生存</h4><p><strong>紫色闪电</strong>: 加快飞行器射击速度</p>
-<p><strong>绿色五角星</strong>: 会使玩家飞行器拥有同时向三个方向射击的能力</p>
-<p><strong>黄色花环</strong>: 会让玩家飞行器处于无敌状态</p>
-<p><strong>蓝色表盘</strong>: 会使空间时间静止，但玩家飞行器不受影响 </p>
-<p><strong>橘色核弹</strong>: 会在玩家飞行器周围产生爆炸弹幕，帮助玩家清除敌人</p>
-<h4 id="4-_另外通过收集星辰可以升级飞行器三种能力，分别是：星辰掉落概率，道具掉落概率和增加道具效果时间">4. 另外通过收集星辰可以升级飞行器三种能力，分别是：星辰掉落概率，道具掉落概率和增加道具效果时间</h4><h3 id="截图">截图</h3><img src="/2015/08/02/barrage-space/0.png"> <img src="/2015/08/02/barrage-space/1.png"> <img src="/2015/08/02/barrage-space/2.png"> <img src="/2015/08/02/barrage-space/3.png"> <img src="/2015/08/02/barrage-space/4.png">
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近为了熟悉cocos2d-x引擎，做了个练手的弹幕游戏，向《Space Wars》《几何战争》致敬，ios已经上线了, 欢迎体验</p>
-<p>itunes下载地址：<a href="https://itunes.apple.com/us/app/barrage-spac]]>
-    </summary>
-    
-      <category term="BarrageSpace" scheme="http://tinyflare.com/tags/BarrageSpace/"/>
-    
-      <category term="cocos2d-x" scheme="http://tinyflare.com/tags/cocos2d-x/"/>
-    
-      <category term="我的游戏" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">Irenicus</span>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
   
-  <entry>
-    <title><![CDATA[IndieAce GameJam 2015]]></title>
-    <link href="http://tinyflare.com/2015/07/19/IndieAce-gamejame-201r5/"/>
-    <id>http://tinyflare.com/2015/07/19/IndieAce-gamejame-201r5/</id>
-    <published>2015-07-19T01:45:01.000Z</published>
-    <updated>2015-07-19T02:49:16.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://img.youxiguancha.com/news/mater_3_bc0e6c5e03e5830b218b5f8abd6851f9.jpg" alt="gamejam2015 icon" title="gamejam2015"></p>
-<p><em>**</em>上周和2个小伙伴一起参加了GameJam比赛，毕竟要走独立开发这条难走的路，也算去感受了一次gamejam的氛围。总体来说感觉还不错，当有一个目标的时候，效率出奇的高，不包括睡觉用了26个小时完成了这个项目，这次比三的题目是：</p>
-<img src="/2015/07/19/IndieAce-gamejame-201r5/title.png">
-<p><em>**</em>题目很开放，第一感觉和大家一样都是这不是OOXX那个九宫格么，肯定不能这么low了，想到之前在职做商业游戏时的各种压抑突然觉得这就是个没有色彩，禁锢生活和创意牢笼，跳出牢笼这也是我辞职走独立开发想法的来源，于是破除牢笼，追寻色彩之旅来了。</p>
-<img src="/2015/07/19/IndieAce-gamejame-201r5/1.png"> <img src="/2015/07/19/IndieAce-gamejame-201r5/2.png">
-<img src="/2015/07/19/IndieAce-gamejame-201r5/3.png"> <img src="/2015/07/19/IndieAce-gamejame-201r5/4.png">
-<img src="/2015/07/19/IndieAce-gamejame-201r5/5.jpg"> <img src="/2015/07/19/IndieAce-gamejame-201r5/6.jpg">
-<h6 id="附上下载地址">附上下载地址</h6><p><a href="http://gamejam.indieace.com/Game.aspx?gamejam_id=2&amp;game_id=253" target="_blank" rel="external">http://gamejam.indieace.com/Game.aspx?gamejam_id=2&amp;game_id=253</a> </p>
-<p>**注意android版本有无音乐的bug，建议下载源码自己编译mac版本</p>
-<h6 id="github下载地址：">github下载地址：</h6><p><a href="https://github.com/lwwhb/GameJam.git" target="_blank" rel="external">https://github.com/lwwhb/GameJam.git</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="http://img.youxiguancha.com/news/mater_3_bc0e6c5e03e5830b218b5f8abd6851f9.jpg" alt="gamejam2015 icon" title="gamejam2015"></p>
-]]>
-    </summary>
-    
-      <category term="gamejam" scheme="http://tinyflare.com/tags/gamejam/"/>
-    
-      <category term="感悟" scheme="http://tinyflare.com/tags/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="我的生活" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
   
-  <entry>
-    <title><![CDATA[新的起点]]></title>
-    <link href="http://tinyflare.com/2015/07/18/new_start_point/"/>
-    <id>http://tinyflare.com/2015/07/18/new_start_point/</id>
-    <published>2015-07-18T07:51:27.000Z</published>
-    <updated>2015-07-19T02:04:31.000Z</updated>
-    <content type="html"><![CDATA[<img src="/2015/07/18/new_start_point/logo.png">
-<h5 id="今天开始独立游戏之旅，上路，加油～">今天开始独立游戏之旅，上路，加油～</h5>]]></content>
-    <summary type="html">
-    <![CDATA[<img src="/2015/07/18/new_start_point/logo.png">
-<h5 id="今天开始独立游戏之旅，上路，加油～">今天开始独立游戏之旅，上路，加油～</h5>]]>
-    </summary>
-    
-      <category term="感悟" scheme="http://tinyflare.com/tags/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="我的生活" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
+
   
-</feed>
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
+    });
+  </script>
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    LogoAndMenuMotion();
+    sidebatToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+    function LogoAndMenuMotion() {
+      $.Velocity.RunSequence([
+        { e: $('.brand'), p: { opacity: 1 }, o: { duration: 100 } },
+        { e: $('.logo'), p: { opacity: 1, top: 0 }, o: { duration: 50} },
+        
+        { e: $('.logo-line-before i'), p: { translateX: "100%" }, o: { duration: 500, sequenceQueue: false } },
+        { e: $('.logo-line-after i'), p: { translateX: "-100%" }, o: { duration: 500, sequenceQueue: false } },
+        
+        { e: $('.site-title'), p: { opacity: 1, top: 0 }, o: { duration: 200 } }
+      ]);
+      $('.menu-item').velocity('transition.slideDownIn', {display: null});
+    }
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        display: 'block',
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      var postMotionOptions = window.postMotionOptions || {stagger: 300, drag: true};
+      $('.post').velocity('transition.slideDownIn', postMotionOptions);
+    }
+
+    function sidebatToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+<script type="text/javascript" id="bootstrap.scrollspy.custom">
+  /* ========================================================================
+  * Bootstrap: scrollspy.js v3.3.2
+  * http://getbootstrap.com/javascript/#scrollspy
+  * ========================================================================
+  * Copyright 2011-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * ======================================================================== */
+
+  /**
+   * Custom by iissnan
+   *
+   * - Add a `clear.bs.scrollspy` event.
+   * - Esacpe targets selector.
+   */
+
+
+  +function ($) {
+    'use strict';
+
+    // SCROLLSPY CLASS DEFINITION
+    // ==========================
+
+    function ScrollSpy(element, options) {
+      this.$body          = $(document.body)
+      this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+      this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+      this.selector       = (this.options.target || '') + ' .nav li > a'
+      this.offsets        = []
+      this.targets        = []
+      this.activeTarget   = null
+      this.scrollHeight   = 0
+
+      this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+      this.refresh()
+      this.process()
+    }
+
+    ScrollSpy.VERSION  = '3.3.2'
+
+    ScrollSpy.DEFAULTS = {
+      offset: 10
+    }
+
+    ScrollSpy.prototype.getScrollHeight = function () {
+      return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    }
+
+    ScrollSpy.prototype.refresh = function () {
+      var that          = this
+      var offsetMethod  = 'offset'
+      var offsetBase    = 0
+
+      this.offsets      = []
+      this.targets      = []
+      this.scrollHeight = this.getScrollHeight()
+
+      if (!$.isWindow(this.$scrollElement[0])) {
+        offsetMethod = 'position'
+        offsetBase   = this.$scrollElement.scrollTop()
+      }
+
+      this.$body
+        .find(this.selector)
+        .map(function () {
+          var $el   = $(this)
+          var href  = $el.data('target') || $el.attr('href')
+          var $href = /^#./.test(href) && $(escapeSelector(href)) // Need to escape selector.
+
+          return ($href
+            && $href.length
+            && $href.is(':visible')
+            && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+        })
+        .sort(function (a, b) { return a[0] - b[0] })
+        .each(function () {
+          that.offsets.push(this[0])
+          that.targets.push(this[1])
+        })
+
+
+    }
+
+    ScrollSpy.prototype.process = function () {
+      var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+      var scrollHeight = this.getScrollHeight()
+      var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+      var offsets      = this.offsets
+      var targets      = this.targets
+      var activeTarget = this.activeTarget
+      var i
+
+      if (this.scrollHeight != scrollHeight) {
+        this.refresh()
+      }
+
+      if (scrollTop >= maxScroll) {
+        return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      }
+
+      if (activeTarget && scrollTop < offsets[0]) {
+        $(this.selector).trigger('clear.bs.scrollspy')  // Add a custom event.
+        this.activeTarget = null
+        return this.clear()
+      }
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollTop >= offsets[i]
+          && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+          && this.activate(targets[i])
+      }
+    }
+
+    ScrollSpy.prototype.activate = function (target) {
+      this.activeTarget = target
+
+      this.clear()
+
+      var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+      var active = $(selector)
+        .parents('li')
+        .addClass('active')
+
+      if (active.parent('.dropdown-menu').length) {
+        active = active
+          .closest('li.dropdown')
+          .addClass('active')
+      }
+
+      active.trigger('activate.bs.scrollspy')
+    }
+
+    ScrollSpy.prototype.clear = function () {
+      $(this.selector)
+        .parentsUntil(this.options.target, '.active')
+        .removeClass('active')
+    }
+
+
+    // SCROLLSPY PLUGIN DEFINITION
+    // ===========================
+
+    function Plugin(option) {
+      return this.each(function () {
+        var $this   = $(this)
+        var data    = $this.data('bs.scrollspy')
+        var options = typeof option == 'object' && option
+
+        if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+        if (typeof option == 'string') data[option]()
+      })
+    }
+
+    var old = $.fn.scrollspy
+
+    $.fn.scrollspy             = Plugin
+    $.fn.scrollspy.Constructor = ScrollSpy
+
+
+    // SCROLLSPY NO CONFLICT
+    // =====================
+
+    $.fn.scrollspy.noConflict = function () {
+      $.fn.scrollspy = old
+      return this
+    }
+
+
+    // SCROLLSPY DATA-API
+    // ==================
+
+    $(window).on('load.bs.scrollspy.data-api', function () {
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this)
+        Plugin.call($spy, $spy.data())
+      })
+    })
+
+  }(jQuery);
+</script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0 && isDesktop()) {
+        setTimeout(function () {
+          $('.sidebar-toggle').trigger('click');
+        }, 800);
+      }
+    });
+  </script>
+
+
+
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tinyflare"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+  
+  <script type="text/javascript">
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-61442727-1');ga('send','pageview');
+  </script>
+
+</body>
+</html>
