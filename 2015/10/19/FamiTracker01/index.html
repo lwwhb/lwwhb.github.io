@@ -1,0 +1,965 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-next">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.0"/>
+
+
+    <meta name="description" content="愉快生活，开心做游戏" />
+
+
+
+	<meta name="keywords" content="基础教程,游戏开发,音乐," />
+
+  <title> 如何使用FamiTracker创建8位音乐 // TinyFlare </title>
+</head>
+
+<body>
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">TinyFlare</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首页
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-categories">
+        <a href="/categories">
+          <i class="menu-item-icon icon-categories"></i> <br />
+          分类
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          归档
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          标签
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-about">
+        <a href="/about">
+          <i class="menu-item-icon icon-about"></i> <br />
+          关于
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+            
+          
+
+          <div id="posts" class="posts-expand">
+            
+  
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              如何使用FamiTracker创建8位音乐
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            发表于 2015-10-19
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类于
+              
+                <a href="/categories/翻译/">翻译</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/10/19/FamiTracker01/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/19/FamiTracker01/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          <p>翻译原文<a href="http://orandze.hubpages.com/hub/How-to-Make-8-Bit-Music" target="_blank" rel="external">http://orandze.hubpages.com/hub/How-to-Make-8-Bit-Music</a></p>
+<h4 id="开始创作Chiptune(芯片声)音乐前需要了解的工具和知识">开始创作Chiptune(芯片声)音乐前需要了解的工具和知识</h4><p>在复古视频游戏与电子媒体领域学习如何制作8位音乐是一个神奇的旅程。首先你必须理解什么是8位音乐。如果你玩过一个NES游戏机，或者你提说过它，但很少有人真正想知道如何制作8位音乐，更别说尝试。当人们在制作最早广泛被商业化的视频游戏时，他们没有我们今天创作音乐的技术。没有FL Studio,没有Garage Band(两款音乐制作软件)。在很长一段时间里，只有一个小小的，可以处理8位信息的电脑芯片控制器。所以声音工程师每天只能创作4通道声音，其中两个通道用来处理高音，一个通道用来处理低音，一个通道用来处理噪声。</p>
+<p>现在我们有创造出更高质量音乐的技术，不再有设备上的限制，为什么人们还会去创作8位音乐？不管你信不信，很多游戏依然适用8位音乐，也被称为“chiptunes”(芯片音乐)，可能是对过去淳朴时光的还年，或者可能是钟爱这种音乐风格，无论什么原因，今天一些游戏依然尝试完全使用8位音乐。</p>
+<p>注：本教程探讨如何成为制作8位音乐中的一员，而不是强制去学习如何使用现代的软件去制作它。如果你想为你的数字音频工作站找寻一款插件的话，我推荐 <a href="http://www.ymck.net/index.html" target="_blank" rel="external">YMCK’s Magical 8bit Plugin</a>.如果真是如此，你也应该在此界面稍作停留，你会学到很酷的东西。</p>
+<h4 id="声波介绍">声波介绍</h4><p>不，我们不是要去海滩，我说的是声音通过空气产生的涟漪。了解波形的基本形式是学习如何制作8位音乐的第一步。</p>
+<p>如果你已经玩过任何形式的录音软件，你可能看到过他们。他们把声音的传递用视觉表现成速度和音高。你看到的声波可能会有点复杂，现在我们讨论用计算机仿真表示，可能会更容易理解。</p>
+<p>在8位音乐中有4种基本的声波类型：Sine(正弦)，Saw(锯齿),Square(正方形),和Triangle(三角形)。</p>
+<p>每一种产生不同类型的声音，他们根据作曲家的意愿塑造成不同类型的效果，如颤音或延迟等。</p>
+<h5 id="Sine_Waves(正弦波)">Sine Waves(正弦波)</h5><p>你可能记得在高中物理课上或大学三角函数或微积分课上见到过它们，这个波形表现为一个完美的向上或向下的过山车型曲线。正如可以预料的那样，它的音色甜美光滑，听起来像长笛。</p>
+<img src="/2015/10/19/FamiTracker01/sine.jpg">
+<h5 id="Saw_Waves(锯齿波)">Saw Waves(锯齿波)</h5><p>这类波形有一点硬，之所以被称为“锯齿”是因为它们看上去像锯的牙齿，急速下降，缓慢上升。这类波形非常被用在8位音乐中的计数旋律。它们也被认为认为是chiptune和音中的中音。锯齿型声波听上去有些嗡嗡嘈杂。(看图)</p>
+<img src="/2015/10/19/FamiTracker01/saw.jpg">
+<h5 id="Square_Waves(方形波)">Square Waves(方形波)</h5><p>这是我最喜欢的一种波形。它代表了一种正选波与锯齿波的混合波形。它也有一些嘈杂感，但同时也能保持平滑。这也是在8位音乐中最常用作主音的波形。这类声波有很好的扩展性，可以作很好的效果改变。</p>
+<img src="/2015/10/19/FamiTracker01/square.jpg">
+<h5 id="Triangle_Waves(三角波)">Triangle Waves(三角波)</h5><p>这类波形听上去和正选波一样平滑，它以直线的上升和下降而不是曲线。波形为三角形。这类波在音效上不起作用，因为它们不能很有效的做主音填充。它们常被用做低音使用，因为它们不用创建嗡嗡的反馈效果就能很容易的到达低音节。它们很适合在低音范围使用。</p>
+<img src="/2015/10/19/FamiTracker01/triangle.jpg">
+<h4 id="声波是如何被创建">声波是如何被创建</h4><div class="video-container"><iframe src="//www.youtube.com/embed/https://www.youtube.com/watch?v=YsZKvLnf7wU" frameborder="0" allowfullscreen></iframe></div>
+<h5 id="8位声道">8位声道</h5><p>在NES时代，由于技术的限制，任何给定时间的声音只能有4条声轨(或声道)。这意味着作曲家或NES游戏设计师的一些创意或者他们想用音乐表达的东西往往更多依赖于更强烈的旋律和颤音效果，这通畅会占用一个或2个声道。而腾出空间做其他事情。如果你去玩你最喜欢的NES游戏，你会听到每一个声道上每一个音效结束后才会有另一个音效，(像《塞尔达》低血量时或者《洛克人》射击时)为的是节省通道播放其他效果。</p>
+<h5 id="声道1_-_Treble(高音)">声道1 - Treble(高音)</h5><p>要讨论的第一个声道1几乎总是用于高音旋律，它通常是方形波货锯齿波，当然正选波也可以很好的工作。这个声道应该是最注意细节的。tremolo、vibrato或delay等效果可以更明亮的表现。当你创造主旋律时更应该花费耐心和爱去对待它。它可能会是当人把游戏关掉后在接下来几天走路一直哼唱或者第一时间关掉你的游戏的主要原因。</p>
+<img src="/2015/10/19/FamiTracker01/melody.jpg"> 
+<p>主旋律</p>
+<h5 id="声道_2_-_Mid-Range(中音)">声道 2 - Mid-Range(中音)</h5><p>这个声道通常被用来制作副旋律。我想把它当作高音声道1的中音。这一行应该简单点。这一声道的主要工作是填补通道1主音部分和通道3的低音部分，使两者之间和音更加和谐。这个声道使用正弦波或者锯齿波会是很好的选择。当然方形波也可以很好的使用。一些arpeggios和delay效果也是很好的选择。在8位音乐中arpeggios效果可以创造出快节奏的分解和弦，能够完美的填补和音。</p>
+<img src="/2015/10/19/FamiTracker01/backingmelody.jpg"> 
+<p>副旋律</p>
+<h5 id="声道_3_-_Bass(低音)">声道 3 - Bass(低音)</h5><p>虽然我们不能使它像Dubstep一样的重击感，但我们依然能创造一个甜美的低音线来完成任何歌曲。最佳波形选择是三角波。最棒的事情是三角波和正选波很像，它能无阻碍的浸入上面的寄存器。如果你需要一个对或更多音符来创建一个紧凑丰富声音的时候，这事非常奇妙的。由于这条声线对一般游戏玩家的耳朵听起来不会像主音那么明显。低音也没过于复杂或嘈杂感。所以他很完美的满足一些切分音的音符。</p>
+<img src="/2015/10/19/FamiTracker01/bass.jpg"> 
+<p>低音</p>
+<h5 id="声道_4_-_Noise(噪音)">声道 4 - Noise(噪音)</h5><p>当你玩最喜爱的NES游戏时，你可能已经注意到一些敲击的声音真的只是噪音。这个声道不合适我们讨论的任何一种波。但他可以使用scraping、pops、clicks或者其他噪音效果在不同的音高或音速上。你也可以对这个声道添加效果，但可以对其他声道产生影响，可能会给游戏带来意想不到的效果。</p>
+<img src="/2015/10/19/FamiTracker01/noise.jpg"> 
+<p>噪音</p>
+<h5 id="额外声道_-_DPCM">额外声道  - DPCM</h5><p>此通道可以用来导入声音文件。但比原声音的质量会低很多，所以你不要指望你的下一个NES可以通过这种方式获得比较帅的声音。这个声道不是很经常使用，如果你特别在意如何使用它，在famitracker帮助文件中有很好的解释。点击帮助&gt;帮助主题或按F1，展开列表，在列表下边点击EPCM Editor即可。</p>
+<h4 id="8位音乐制作器">8位音乐制作器</h4><p>现在你知道了芯片音轨如何工作的所有基础知识了，现在是时候开始如何自己制作了，在8位音乐制作方面FamiTracker时最好的工具之一。知道如何演奏钢琴的基础知识是一个很好的优势，因为它的设计就是让你电脑按键按照钢琴键盘一样的输入音符。但是你也不要担心，如果你不知道如何演奏也没必要去上课学习。你很快就会把这个程序学习起来的。</p>
+<h5 id="音轨程序">音轨程序</h5><p>音轨最好的地方就是可以导出成NSF格式，这意味着你可以在制作一个NES音乐盒游戏中使用它们。“这个格式还在被使用么?”, 当然，如果你不信可以看看这个游戏 <a href="https://en.wikipedia.org/wiki/Battle_Kid:_Fortress_of_Peril" target="_blank" rel="external">Battle Kid</a>.</p>
+<ul>
+<li><p>FamiTracker是免费喝开源的。也是我个人制作芯片音轨的选择。我将用它来完成剩余的本教程</p>
+</li>
+<li><p>如果你不想使用FamiTracker还可以使用MilkyTracker.它也是免费和开源的。</p>
+</li>
+</ul>
+<h5 id="其他资源">其他资源</h5><ul>
+<li>如果你想为你的数字音频工作站找寻一款复古插件的话，<a href="http://www.ymck.net/index.html" target="_blank" rel="external">YMCK’s Magical 8bit Plugin</a>是相当不错的选择</li>
+<li>如果你只是想快速寻找到一些8位声音音效而不是想学习上述程序，或者你只是想制作自己的芯片音乐找灵感的话，你可以可以尝试使用<a href="http://www.drpetter.se/project_sfxr.html" target="_blank" rel="external">SFXR</a>.它是免费开源的8位音乐制作软件，可以给制作复古游戏的开发者提供帮助。</li>
+</ul>
+<img src="/2015/10/19/FamiTracker01/famitracker.jpg"> 
+<p>Famitracker</p>
+<h4 id="设置FamiTracker">设置FamiTracker</h4><p>因为我选择的程序，我将向你展示它的基础知识，包括设置、输入音符以及增加效果。</p>
+<p>当你第一次启动这个程序，会有一个空的曲子面板展示给你。注意不同的通道已经被设置成了不同的波形。通道1，2被设置成方形波，通道3被设置成三角波，通道4被设置成噪声波。还有一个额外的通道被设置成”DPCM”。最大的区域是模版编辑器。</p>
+<p>在左上角你会发现一个一堆0的小盒子，这是模版选择器。接下来是声音设置和声音信息。你可以很简单的找到它们。</p>
+<h4 id="编辑乐器">编辑乐器</h4><img src="/2015/10/19/FamiTracker01/editinganinstrument.jpg"> 
+<p>编辑乐器</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/https://www.youtube.com/watch?v=bwNElW5IEo0" frameborder="0" allowfullscreen></iframe></div>
+<h4 id="创建一段旋律">创建一段旋律</h4><h5 id="制作和编辑一个新乐器">制作和编辑一个新乐器</h5><p>也许你已经写了一首歌，并且想把它变成8位音乐。如果你没有，你至少应该马上去写一段主旋律或挑选你最喜欢的NES音乐来复制。</p>
+<p>一旦你想出了一个好的主旋律，那是时间去制作它了。首先，我们必须创建一个新乐器，然后编辑声音和效果。要做到这一点，点击最左边的图标，在下列行中点击左上方的黑盒子。当你这样做后会跳出一个包含“00-新乐器”黑色对话框。双击这些文字或点击同一行中最右边的图标。</p>
+<p>一个包含一些选项的新对话框会出现。点击volume旁的按钮并打开它。现在点击加号一段时间后Size会出现。你现在在最大线上点击来调整乐器每一个播放音符的大小。当你点击后注意Size编辑器下边出现的数字。这将高速你每一行会有什么效果。举例，如果你有一段数字序列”10,8,6,4,2”,每当这个乐器播放一个音符。音量将会从非常响亮的10开始，并且每当下一个音符被播放会产生一个2度的下降。</p>
+<p>效果往往比音量更有用，但对于旋律线比较少。使用其他效果会更自由。如果你添加了一些无意的东西，你可以随时很轻易的撤销。</p>
+<h4 id="键盘按键">键盘按键</h4><img src="/2015/10/19/FamiTracker01/keyboard.jpg"> 
+<p>键盘按键</p>
+<h4 id="输入音符">输入音符</h4><p>现在开始为我们的新乐器添加播放音符，首先你必须按住“空格”键。这会使程序进入编辑模式。现在你可以开始演奏你的键盘，像演奏钢琴一样。上面展示了这个程序最底下像钢琴一样对应的两行按键，它和上面两行工作方式一样，但那是高八度的音节使用的。所以在任何点，你都有两个全音阶音程可以工作。你可以在任何时候从程序左上角的下拉列表选择一个八度范围改变。</p>
+<p>每一个虚线被认为是16分之一拍。所以每一个高亮行代表四分之一拍。如果由于某种原因你需要三十秒的音符。只需要在每一行的值减半。这样高亮行会代表一个八拍。当你开始输入音符，用完了工作空间，只需要按住声音设置Frames下边的加号即可。</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/https://www.youtube.com/watch?v=FNduThBHcG8" frameborder="0" allowfullscreen></iframe></div>
+<h4 id="特效">特效</h4><img src="/2015/10/19/FamiTracker01/effects.jpg"> 
+<p>Effects</p>
+<h5 id="添加特效">添加特效</h5><p>有一些特效你可以在任何时间添加到你的乐器或者从中移除。每个数字都赋予一个数字或字母，你只需要输入双数字作为参数。首先让我们谈论一下关于音符输入的布局。</p>
+<p>你会注意到在通道的每一列会有一大堆点在里面，仔细看你会发现一些点被按列组合在了一起。最左边一列一组三个点。当你点击并输入一些音符，这些点会被音符破折号或者音阶符替代。如果你输入了音符，你会发现下一列的一组两个点会被显示成00. 这些数字代表了被设置了演奏乐器的音符。如果你有多个乐器。选择一个播放这些音符。如果你想拥有不同乐器和不同效果，例如立体的arpeggios(琶音)，你都可以很容易的在乐器编辑器中编辑。</p>
+<p>下一列只包含一个点。这个是音量。在这个程序中大多数都是以16进制为基础的。所以音量这个值是被定义成从0到F。如果你对16进制不熟悉的话，可以理解成为所有值都是被定义成16的倍数。随着数字的增加，直到9，后边开始以字母A开始增加，直到最高的F。</p>
+<p>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F)</p>
+<h5 id="音量变化">音量变化</h5><p>在FamiTracker中，这是最简单和最有效的特效。在你的曲子任何一个点，你都可以改变这个音量行的值。无论这个音符是不是正在被播放。这就是我们如何去创造一个延迟的效果。如果你的被播放的音符的音量被设置成F,你可以一次下降几个度。然后定住，然后再下降。例如F,B,7,3,D,8,4,1</p>
+<h5 id="其他效果">其他效果</h5><p>另外除了能改变曲子每一行的音量，你可以做很多其他效果，最后一列的是三个一组的点。再这里你能添加喝编辑任何你希望的效果。第一个点是表示什么样的效果将被应用，接下来的2个点表示不同效果下的不同参数，视情况而定。比如我们想添加Tremolo(颤音)效果。所以挑选一行并且在第一个表示效果的点上键入类型7，在这种情况下，下一个点代表速度，第三个点代表深度。如果你不知道这些意味着什么，试试用用看看他们有什么变化。</p>
+<p>在我的下面例子“Chippy”中，我首先输入了777，然后是755，之后又是733，如果你也尝试这样做了，你会听到这三段的不同效果。</p>
+<p>正如上边所提到的，还有许多效果你可以添加。事实上在这里讨论的话要讲很多。要查看完整的效果列表，以及输入方式，点击帮助(help)&gt;效果表(Effect Table).</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/https://www.youtube.com/watch?v=v_eHQiB4v-c" frameborder="0" allowfullscreen></iframe></div>
+<h4 id="继续制作Chiptunes!">继续制作Chiptunes!</h4><p>这里淘落的知识关于制作8位音乐的开始，在其他声道上重复上述步骤，用不了多久你就完全熟悉8位音乐制作了，你可以展示给你的朋友!</p>
+<p>制药你这么做了，FamiTracker可以导出你的曲子为NSF货WAV格式，也许你以前听说过WAV,这种格式是非常合适在互联网上传播展示的。如果你真的想要正宗的8位音乐，可以保存为NSF格式。那么你只能在模拟器上或其他程序中播放了。</p>
+<h5 id="例子">例子</h5><p>Chippy</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/https://www.youtube.com/watch?v=41u_r8NCh8I" frameborder="0" allowfullscreen></iframe></div>
+<p>Mega Man X - Boomer Kawanger</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/https://www.youtube.com/watch?v=e1EVUlYtxoA" frameborder="0" allowfullscreen></iframe></div>
+<p>Final Fantasy 7 - JENOVA</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/https://www.youtube.com/watch?v=6j2dJdLwI9Q" frameborder="0" allowfullscreen></iframe></div>
+<p>Journey - Don’t Stop Believing</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/https://www.youtube.com/watch?v=5VkFATXaQWE" frameborder="0" allowfullscreen></iframe></div>
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/基础教程/">
+                #基础教程
+              </a>
+            
+              <a href="/tags/游戏开发/">
+                #游戏开发
+              </a>
+            
+              <a href="/tags/音乐/">
+                #音乐
+              </a>
+            
+          </div>
+        
+
+        
+          <div class="post-nav">
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2015/09/23/Picking-a-Color-Palette-for-Your-Game-s-Artwork/">为你的游戏美术选取合适的调色板</a>
+              
+            </div>
+          </div>
+        
+
+        
+        
+      </div>
+    
+  </div>
+
+
+
+  
+    <div class="comments" id="comments">
+      
+        <div class="ds-thread" data-thread-key="2015/10/19/FamiTracker01/"
+             data-title="如何使用FamiTracker创建8位音乐" data-url="http://tinyflare.com/2015/10/19/FamiTracker01/">
+        </div>
+
+      
+    </div>
+  
+
+          </div>
+
+          
+        </div>
+
+        
+<div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+    
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview">
+          站点概览
+        </li>
+      </ul>
+    
+
+    <div class="site-overview">
+      <div class="site-author motion-element">
+        <img class="site-author-image" src="https://avatars2.githubusercontent.com/u/1457886?v=3&s=460" alt="Irenicus" />
+        <p class="site-author-name">Irenicus</p>
+      </div>
+      <p class="site-description motion-element">愉快生活，开心做游戏</p>
+      <div class="site-state motion-element">
+        <div class="site-state-item site-state-posts">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </div>
+        <div class="site-state-item site-state-tags">
+            <span class="site-state-item-count">11</span>
+            <span class="site-state-item-name">标签</span>
+        </div>
+        <div class="site-state-item site-state-pages">
+            <span class="site-state-item-count">3</span>
+            <span class="site-state-item-name">页面</span>
+        </div>
+      </div>
+
+      
+        <div class="feed-link motion-element">
+          <a href="/atom.xml">
+            <i class="menu-item-icon icon-feed"></i>
+            RSS
+          </a>
+        </div>
+      
+
+      <div class="links-of-author motion-element">
+        
+      </div>
+
+      
+      
+        <div class="cc-license motion-element">
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+            <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+          </a>
+        </div>
+      
+
+    </div>
+
+    
+      <div class="post-toc-wrap sidebar-panel-active">
+        <div class="post-toc-indicator-top post-toc-indicator"></div>
+        <div class="post-toc">
+          
+          
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#开始创作Chiptune(芯片声)音乐前需要了解的工具和知识"><span class="nav-number">1.</span> <span class="nav-text">开始创作Chiptune(芯片声)音乐前需要了解的工具和知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声波介绍"><span class="nav-number">2.</span> <span class="nav-text">声波介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Sine_Waves(正弦波)"><span class="nav-number">2.1.</span> <span class="nav-text">Sine Waves(正弦波)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Saw_Waves(锯齿波)"><span class="nav-number">2.2.</span> <span class="nav-text">Saw Waves(锯齿波)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Square_Waves(方形波)"><span class="nav-number">2.3.</span> <span class="nav-text">Square Waves(方形波)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Triangle_Waves(三角波)"><span class="nav-number">2.4.</span> <span class="nav-text">Triangle Waves(三角波)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声波是如何被创建"><span class="nav-number">3.</span> <span class="nav-text">声波是如何被创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#8位声道"><span class="nav-number">3.1.</span> <span class="nav-text">8位声道</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#声道1_-_Treble(高音)"><span class="nav-number">3.2.</span> <span class="nav-text">声道1 - Treble(高音)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#声道_2_-_Mid-Range(中音)"><span class="nav-number">3.3.</span> <span class="nav-text">声道 2 - Mid-Range(中音)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#声道_3_-_Bass(低音)"><span class="nav-number">3.4.</span> <span class="nav-text">声道 3 - Bass(低音)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#声道_4_-_Noise(噪音)"><span class="nav-number">3.5.</span> <span class="nav-text">声道 4 - Noise(噪音)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#额外声道_-_DPCM"><span class="nav-number">3.6.</span> <span class="nav-text">额外声道  - DPCM</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8位音乐制作器"><span class="nav-number">4.</span> <span class="nav-text">8位音乐制作器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#音轨程序"><span class="nav-number">4.1.</span> <span class="nav-text">音轨程序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他资源"><span class="nav-number">4.2.</span> <span class="nav-text">其他资源</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置FamiTracker"><span class="nav-number">5.</span> <span class="nav-text">设置FamiTracker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编辑乐器"><span class="nav-number">6.</span> <span class="nav-text">编辑乐器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一段旋律"><span class="nav-number">7.</span> <span class="nav-text">创建一段旋律</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#制作和编辑一个新乐器"><span class="nav-number">7.1.</span> <span class="nav-text">制作和编辑一个新乐器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#键盘按键"><span class="nav-number">8.</span> <span class="nav-text">键盘按键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入音符"><span class="nav-number">9.</span> <span class="nav-text">输入音符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特效"><span class="nav-number">10.</span> <span class="nav-text">特效</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加特效"><span class="nav-number">10.1.</span> <span class="nav-text">添加特效</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#音量变化"><span class="nav-number">10.2.</span> <span class="nav-text">音量变化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他效果"><span class="nav-number">10.3.</span> <span class="nav-text">其他效果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继续制作Chiptunes!"><span class="nav-number">11.</span> <span class="nav-text">继续制作Chiptunes!</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例子"><span class="nav-number">11.1.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></div>
+          
+        </div>
+        <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+      </div>
+    
+
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">Irenicus</span>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
+    });
+  </script>
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    LogoAndMenuMotion();
+    sidebatToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+    function LogoAndMenuMotion() {
+      $.Velocity.RunSequence([
+        { e: $('.brand'), p: { opacity: 1 }, o: { duration: 100 } },
+        { e: $('.logo'), p: { opacity: 1, top: 0 }, o: { duration: 50} },
+        
+        { e: $('.logo-line-before i'), p: { translateX: "100%" }, o: { duration: 500, sequenceQueue: false } },
+        { e: $('.logo-line-after i'), p: { translateX: "-100%" }, o: { duration: 500, sequenceQueue: false } },
+        
+        { e: $('.site-title'), p: { opacity: 1, top: 0 }, o: { duration: 200 } }
+      ]);
+      $('.menu-item').velocity('transition.slideDownIn', {display: null});
+    }
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        display: 'block',
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      var postMotionOptions = window.postMotionOptions || {stagger: 300, drag: true};
+      $('.post').velocity('transition.slideDownIn', postMotionOptions);
+    }
+
+    function sidebatToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+<script type="text/javascript" id="bootstrap.scrollspy.custom">
+  /* ========================================================================
+  * Bootstrap: scrollspy.js v3.3.2
+  * http://getbootstrap.com/javascript/#scrollspy
+  * ========================================================================
+  * Copyright 2011-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * ======================================================================== */
+
+  /**
+   * Custom by iissnan
+   *
+   * - Add a `clear.bs.scrollspy` event.
+   * - Esacpe targets selector.
+   */
+
+
+  +function ($) {
+    'use strict';
+
+    // SCROLLSPY CLASS DEFINITION
+    // ==========================
+
+    function ScrollSpy(element, options) {
+      this.$body          = $(document.body)
+      this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+      this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+      this.selector       = (this.options.target || '') + ' .nav li > a'
+      this.offsets        = []
+      this.targets        = []
+      this.activeTarget   = null
+      this.scrollHeight   = 0
+
+      this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+      this.refresh()
+      this.process()
+    }
+
+    ScrollSpy.VERSION  = '3.3.2'
+
+    ScrollSpy.DEFAULTS = {
+      offset: 10
+    }
+
+    ScrollSpy.prototype.getScrollHeight = function () {
+      return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    }
+
+    ScrollSpy.prototype.refresh = function () {
+      var that          = this
+      var offsetMethod  = 'offset'
+      var offsetBase    = 0
+
+      this.offsets      = []
+      this.targets      = []
+      this.scrollHeight = this.getScrollHeight()
+
+      if (!$.isWindow(this.$scrollElement[0])) {
+        offsetMethod = 'position'
+        offsetBase   = this.$scrollElement.scrollTop()
+      }
+
+      this.$body
+        .find(this.selector)
+        .map(function () {
+          var $el   = $(this)
+          var href  = $el.data('target') || $el.attr('href')
+          var $href = /^#./.test(href) && $(escapeSelector(href)) // Need to escape selector.
+
+          return ($href
+            && $href.length
+            && $href.is(':visible')
+            && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+        })
+        .sort(function (a, b) { return a[0] - b[0] })
+        .each(function () {
+          that.offsets.push(this[0])
+          that.targets.push(this[1])
+        })
+
+
+    }
+
+    ScrollSpy.prototype.process = function () {
+      var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+      var scrollHeight = this.getScrollHeight()
+      var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+      var offsets      = this.offsets
+      var targets      = this.targets
+      var activeTarget = this.activeTarget
+      var i
+
+      if (this.scrollHeight != scrollHeight) {
+        this.refresh()
+      }
+
+      if (scrollTop >= maxScroll) {
+        return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      }
+
+      if (activeTarget && scrollTop < offsets[0]) {
+        $(this.selector).trigger('clear.bs.scrollspy')  // Add a custom event.
+        this.activeTarget = null
+        return this.clear()
+      }
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollTop >= offsets[i]
+          && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+          && this.activate(targets[i])
+      }
+    }
+
+    ScrollSpy.prototype.activate = function (target) {
+      this.activeTarget = target
+
+      this.clear()
+
+      var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+      var active = $(selector)
+        .parents('li')
+        .addClass('active')
+
+      if (active.parent('.dropdown-menu').length) {
+        active = active
+          .closest('li.dropdown')
+          .addClass('active')
+      }
+
+      active.trigger('activate.bs.scrollspy')
+    }
+
+    ScrollSpy.prototype.clear = function () {
+      $(this.selector)
+        .parentsUntil(this.options.target, '.active')
+        .removeClass('active')
+    }
+
+
+    // SCROLLSPY PLUGIN DEFINITION
+    // ===========================
+
+    function Plugin(option) {
+      return this.each(function () {
+        var $this   = $(this)
+        var data    = $this.data('bs.scrollspy')
+        var options = typeof option == 'object' && option
+
+        if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+        if (typeof option == 'string') data[option]()
+      })
+    }
+
+    var old = $.fn.scrollspy
+
+    $.fn.scrollspy             = Plugin
+    $.fn.scrollspy.Constructor = ScrollSpy
+
+
+    // SCROLLSPY NO CONFLICT
+    // =====================
+
+    $.fn.scrollspy.noConflict = function () {
+      $.fn.scrollspy = old
+      return this
+    }
+
+
+    // SCROLLSPY DATA-API
+    // ==================
+
+    $(window).on('load.bs.scrollspy.data-api', function () {
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this)
+        Plugin.call($spy, $spy.data())
+      })
+    })
+
+  }(jQuery);
+</script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0 && isDesktop()) {
+        setTimeout(function () {
+          $('.sidebar-toggle').trigger('click');
+        }, 800);
+      }
+    });
+  </script>
+
+
+
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tinyflare"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+  
+  <script type="text/javascript">
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-61442727-1');ga('send','pageview');
+  </script>
+
+</body>
+</html>
