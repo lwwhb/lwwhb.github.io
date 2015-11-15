@@ -4,7 +4,7 @@
   <subtitle><![CDATA[用心生活，开心做游戏]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://tinyflare.com/"/>
-  <updated>2015-10-19T05:02:50.000Z</updated>
+  <updated>2015-11-15T06:18:52.000Z</updated>
   <id>http://tinyflare.com/</id>
   
   <author>
@@ -13,6 +13,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[程序化地牢生成算法]]></title>
+    <link href="http://tinyflare.com/2015/11/14/DungeonGenerationAlgorithm/"/>
+    <id>http://tinyflare.com/2015/11/14/DungeonGenerationAlgorithm/</id>
+    <published>2015-11-14T13:56:18.000Z</published>
+    <updated>2015-11-15T06:18:52.000Z</updated>
+    <content type="html"><![CDATA[<p>翻译原文<a href="http://www.gamasutra.com/blogs/AAdonaac/20150903/252889/Procedural_Dungeon_Generation_Algorithm.php" target="_blank" rel="external">http://www.gamasutra.com/blogs/AAdonaac/20150903/252889/Procedural_Dungeon_Generation_Algorithm.php</a></p>
+<p>这篇文章阐述了一个生成随机地牢的算法，这是由<a href="https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/" target="_blank" rel="external">tinykeepdev</a><a href="http://store.steampowered.com/app/278620/" target="_blank" rel="external">游戏</a>最早使用的技术。我这里会比原文章更详细的介绍生成步骤。算法步骤是这样工作的:</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/wM30Xyl.gif">
+<h4 id="生成房间">生成房间</h4><p>首先你需要在一个圆圈内随机宽高生成一些房间，我认为tinykeep使用的是正太分布的算法来生成房间大小的。这通常是一个好主意，因为你可以给定更多的参数。选择不同的宽高比例和标准差会生成式样不同的地牢。</p>
+<p>你需要做的是一个这样的函数 getRandomPointInCircle:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandomPointInCircle</span>(<span class="title">radius</span>)</span></span><br><span class="line">  <span class="built_in">local</span> t = <span class="number">2</span>*math.<span class="constant">pi</span>*math.<span class="built_in">random</span>()</span><br><span class="line">  <span class="built_in">local</span> u = math.<span class="built_in">random</span>()+math.<span class="built_in">random</span>()</span><br><span class="line">  <span class="built_in">local</span> r = nil</span><br><span class="line">  <span class="keyword">if</span> u &gt; <span class="number">1</span> <span class="keyword">then</span> r = <span class="number">2</span>-u <span class="keyword">else</span> r = u <span class="function"><span class="keyword">end</span></span></span><br><span class="line">  <span class="constant">return</span> radius*r*math.<span class="built_in">cos</span>(t), radius*r*math.<span class="built_in">sin</span>(t)</span><br><span class="line"><span class="function"><span class="keyword">end</span></span></span><br></pre></td></tr></table></figure>
+<p>你可以从<a href="http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly" target="_blank" rel="external">这里</a>获得更多的信息。接下来你需要做的的是这些：</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/9TsZluP.gif">
+<p>一个你必须考虑的非常重要的事情(至少在理论上)是当你处理一个瓷片(tile)型网格,你需要保证所有东西都在相同的网格山峰。在上边gif图中每个瓷片(tile)的大小是4像素，这意味着所有房间的位置和大小都是4的倍数。要做到这样，我把位置和长宽的对齐封装到一个函数中：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">roundm</span><span class="params">(n, m)</span></span> <span class="keyword">return</span> <span class="built_in">math</span>.floor(((n + m - <span class="number">1</span>)/m))*m <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Now we can change the returned value from getRandomPointInCircle to:</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandomPointInCircle</span><span class="params">(radius)</span></span></span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">return</span> roundm(radius*r*<span class="built_in">math</span>.cos(t), tile_size), </span><br><span class="line">         roundm(radius*r*<span class="built_in">math</span>.sin(t), tile_size)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="分割房间">分割房间</h4><p>现在我们继续分割部分。这里有很多房间被堆叠到一起，它们不应该是重叠的。TKdev使用分离操作行为来进行的。但是我发现使用一个物理引擎来做这些更加简单。当你添加完所有房间后，简单添加实体物理体来匹配每个房间的位置，然后进行模拟运行，直到所有物理对象都进入sleep状态。在这个gif中我运行了物理模拟，当你对不同级别做模拟时，你可以加速物理仿真模拟速度。</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/Zv2kYmv.gif">
+<p>除了通过调用roundm函数设置房间位置并且保证彼此不重叠、不超出网格时，其他时候不需要绑定物理物体到tile网格上。下面这个gif中的蓝色边框体是物理物体，虽然他们和房间的位置之间会有微小误差:</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/eyTNcXE.gif">
+<p>当你调整房间的水平和垂直位置时，一个问题可能会出现. 组合非常水平，你可能会得到大多数的房间宽度比高度大很多。这个问题在于如何在长房间彼此接近时物理引擎如何解决他们的碰撞:</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/VbvngEZ.gif">
+<p>正如你所看到的，地下城变的非常高，这是不理想的。为了解决这个问题，我们可以使用一个扁的椭圆提到圆圈来生成房间。这样可以保证地牢生成后有一个合适的宽高比例:</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/yMEwhwr.gif">
+<p>为了在一个扁平区域内随机生成，我们使用一个椭圆(在gif中我使用了ellipse_width = 400, ellipse_height = 20)来替换”geRandomPointInCircle”函数:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandomPointInEllipse</span>(<span class="title">ellipse_width</span>, <span class="title">ellipse_height</span>)</span></span><br><span class="line">  <span class="built_in">local</span> t = <span class="number">2</span>*math.<span class="constant">pi</span>*math.<span class="built_in">random</span>()</span><br><span class="line">  <span class="built_in">local</span> u = math.<span class="built_in">random</span>()+math.<span class="built_in">random</span>()</span><br><span class="line">  <span class="built_in">local</span> r = nil</span><br><span class="line">  <span class="keyword">if</span> u &gt; <span class="number">1</span> <span class="keyword">then</span> r = <span class="number">2</span>-u <span class="keyword">else</span> r = u <span class="function"><span class="keyword">end</span></span></span><br><span class="line">  <span class="constant">return</span> roundm(ellipse_width*r*math.<span class="built_in">cos</span>(t)/<span class="number">2</span>, tile_size), </span><br><span class="line">         roundm(ellipse_height*r*math.<span class="built_in">sin</span>(t)/<span class="number">2</span>, tile_size)</span><br><span class="line"><span class="function"><span class="keyword">end</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="生成主房间">生成主房间</h4><p>下一步就是确定哪些房间是主房间，哪些不是. TKdev的做法非常可靠，控制宽/高比例的阀值进行挑选，下面gif中的阀值我们采用1.25乘以平均数。如果宽度平均数和高度平均数为24，则宽和高大于30的房间将被选中。</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/yeqXkTe.gif">
+<h4 id="Delaunay三角化剖分图">Delaunay三角化剖分图</h4><p>现在我们采用所有选定房间的中心点位种子进行Delaunay程序化。你可以自己实现这个程序化方法，也可以采用别人已经实现好的源代码。在我的例子中，我很幸运的得到了<a href="https://github.com/Yonaba/delaunay" target="_blank" rel="external">Yonaba</a>的实现。正如你从界面中看到的通过点划分的三角形:</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/BUeRTaW.gif">
+<p>在你进行三角化后，你可以的到一个图。通过这个图你可以非常容易的实现一个图的数据结构。如果你已经这么做了，你可以添加房间对象的数据结构指针到图中，而不需要再拷贝他们了。</p>
+<h4 id="最小生成树">最小生成树</h4><p>接下来我们要从图中生成一个最小生成树。每一个语言。的实现你都可以找到别人实现的例子</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/gc77fqU.gif">
+<p>最小生成树时用来保证地牢所有主要房间都是可到达的。但不想图那样所有房间都有连接。这是很有用的，在默认情况下，我们通常不需要超级连接地牢，但我们也不想要产生到达不到的岛屿。尽管如此，我们也不希望只有一条线性路。所以我们现在所做的是为Delaunay图题添加一些返回的边。</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/Spogz4z.gif">
+<p>这会增加更多的路径和循环路径，这将使地牢变的更有趣。TKdev添加了%15回来的边，我发现增加%8-%10会是一个更好的值。这也取决于你想要得到的最终地牢。</p>
+<h4 id="走廊">走廊</h4><p>在最后一部分，我们要添加地牢的走廊。要做到这一点，我们通过图中每一点连接到其他节点。如果节点水平位置足够接近(它们的位置y值近似)，在它们之间创建一条水平直线。如果节点垂直位置足够接近(它们的位置x值近似)，在它们之间创建一条垂直直线。如果两个节点水平和垂直位置都不接近。那么创建2条线类似一个L形状。<br>这里的足够接近的意思是计算2个节点的中心点位置，检查中心点的x,y属性是否在系诶单边界内。如果在则在两个中心点间创造一条直线，如果不在，则创造两条直线，从源点到目标点，但只有一个轴。</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/iKR57gS.png">
+<p>在上图中你可以看到所有情况的例子。节点在47与62之间有一条水平线，几点60到125间有一条垂直线，在节点118与119之间有一个L形状。同样重要值得注意的是哪些不适我所创造的唯一的线，我同样根据tile_size在每一边空白处绘制了额外2条线，因为我想我们的走廊宽高至少有3个tile的宽度。</p>
+<p>然后开始用这些线与所有非主房间的矩形进行碰撞检测，如果有泵装，添加他们到现有结构，将他们作为走廊的骨架。</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/Y7E7Egn.png">
+<p>根据不同大小的房间来初始化你的地牢样式，如果你想让走廊看上去更加均匀，你需要针对一个低差分标准来选择保留某个房间或替换某个过细的房间。</p>
+<p>对于最后一步，我们只需要添加tile大小的网格单元来弥补丢失的部分。注意你并不需要一个网格的数据结构，你只需要将每条线根据tile大小来在周围添加一个网格位置列表(即对应一个tile大小的单元)。这里通常是3个tile(或更多)宽度而不是一个。</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/bSV1gpV.png">
+<img src="/2015/11/14/DungeonGenerationAlgorithm/t4G5oRK.gif">
+<p>我们完成了。</p>
+<h4 id="结束语">结束语</h4><p>通过这个程序化过程我们返回的数据结构是: 一个房间列表(每个房间结构包含一个唯一ID,位置xy和宽高width,heigh);一个图,每个节点包含房间的ID和到另外相连房间的距离(多少个tile宽度);一个真实的二维网格，包含的单元可以是空的，可以是指向主房间的指针，可以是指向走廊房间的指针，或者是走廊单元格。有了这三种数据结构我们可以认为你可以得到你想要的任何数据。通过布局你可以找出那个地方可以放置门、敌人、物品或者哪个房间有boss等等。</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/GKO8EUG.gif">
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>翻译原文<a href="http://www.gamasutra.com/blogs/AAdonaac/20150903/252889/Procedural_Dungeon_Generation_Algorithm.php" target="_blank" rel="ex]]>
+    </summary>
+    
+      <category term="Rougelike" scheme="http://tinyflare.com/tags/Rougelike/"/>
+    
+      <category term="基础教程" scheme="http://tinyflare.com/tags/%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="游戏开发" scheme="http://tinyflare.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="程序" scheme="http://tinyflare.com/tags/%E7%A8%8B%E5%BA%8F/"/>
+    
+      <category term="算法" scheme="http://tinyflare.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="翻译" scheme="http://tinyflare.com/categories/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[如何使用FamiTracker创建8位音乐]]></title>
