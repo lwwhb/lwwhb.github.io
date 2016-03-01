@@ -4,7 +4,7 @@
   <subtitle><![CDATA[用心生活，开心做游戏]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://tinyflare.com/"/>
-  <updated>2016-01-24T07:17:38.000Z</updated>
+  <updated>2016-03-01T10:31:20.000Z</updated>
   <id>http://tinyflare.com/</id>
   
   <author>
@@ -13,6 +13,100 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[超越复古像素风的3D扁平着色在Unity中的应用]]></title>
+    <link href="http://tinyflare.com/2016/02/21/2016-2-21/"/>
+    <id>http://tinyflare.com/2016/02/21/2016-2-21/</id>
+    <published>2016-02-21T04:13:20.000Z</published>
+    <updated>2016-03-01T10:31:20.000Z</updated>
+    <content type="html"><![CDATA[<p>翻译原文<a href="http://gamedevelopment.tutsplus.com/articles/go-beyond-retro-pixel-art-with-flat-shaded-3d-in-unity--gamedev-12259" target="_blank" rel="external">http://gamedevelopment.tutsplus.com/articles/go-beyond-retro-pixel-art-with-flat-shaded-3d-in-unity--gamedev-12259</a></p>
+<p>在这篇教程中，我将为你展示如何在Unity中创建flat-shaded(扁平着色)的3D游戏，并且解释为什么你想第一时间去制作它。</p>
+<p>在今天，已经有丰富多样的3D建模工具和引擎让人们去制作3D游戏，然而3D美术的挑战是严峻的，往往需要大量的时间、精力和经验丰富的开发者，这是独立开发者和业余爱好者所不具备的条件。Low-polygon(低模)模型，集合扁平化着色的方式，把人带回道早起90年代的风格，使用技术相对简单，任何人都可以学习使用。这不仅仅是怀旧的倒退，扁平化着色可以很容易的与现代渲染技术结合使用，如环境闭合贴图可以让游戏画面看上去更引人瞩目和更前卫的感觉。</p>
+<p><a href="http://cdn.tutsplus.com/gamedev/uploads/2013/11/gamedevtuts_flatshading.zip" target="_blank" rel="external">获得Unity的例子工程</a></p>
+<p>本教程的前提是假设你已经了解如何进行3D建模工作了，或者能够在互联网上找到一些免费的3D模型。我已经将一些例子模型放到了例子当中。另外在互联网上也有许多关于如何学习3D建模的免费教程。如果你已经开始学习了，我强烈推荐<a href="http://www.wings3d.com/" target="_blank" rel="external">Wings3D</a>和<a href="http://www.sketchup.com/" target="_blank" rel="external">SketchUp</a>两者都与一些专业的建模软件有非常相似的接口，并能输出Blender和Unity都能使用的格式。</p>
+<h4 id="为什么使用扁平着色（Flat_Shading）">为什么使用扁平着色（Flat Shading）</h4><p>当你决定开始动手使用Unity去制作一款全3D游戏，也许你没有游戏美术技能的优势，或者也许你已经制作了一些用2D游戏的美术素材。在任何情况下你都会很快意识到3D游戏需要非常庞大的一套技能去开发。你不仅需要了解如何建立3D模型，还需要这些模型表面正确的展开到一张纹理上。你还需要准确创建出相关的纹理材质。<br>如果你只会创建模型，并且已经为你的游戏创建完成了只想之后通过少数额外步骤上色着色，你可以像如下这么做：<br><div class="video-container"><iframe src="//www.youtube.com/embed/https://youtu.be/J-tRzkdb4BQ" frameborder="0" allowfullscreen></iframe></div><br>或者像这样：<br><div class="video-container"><iframe src="//www.youtube.com/embed/https://youtu.be/RFcAe1OLQtQ" frameborder="0" allowfullscreen></iframe></div><br>当然它看起来很简约甚至有些简陋，但这也是重点！当你的目标是早起90年代怀旧风格，或是现代抽象风格，甚至是想要节省游戏制作时间的一些jam游戏，扁平化着色对于初学者还是3D专家都是非常不错的风格选择。</p>
+<p>如果你刚刚开始游戏美术，简单的工作流程可以让你更专注一些基本功能性的东西：如何用一个漂亮的轮廓和形式去制作一个3D模型，如何用简单的手绘色处理基本颜色。集中精力在这些基本面上可以教会你艺术的基本技能而不是分心于艺术创作方面。</p>
+<h4 id="扁平化着色（Flat_Shading）如何工作">扁平化着色（Flat Shading）如何工作</h4><p>每个三维模型都由一组顶点来确定模型的基本形状。对于每一个顶点都有一个向量称为法向量，你可以把它认为是钉在顶点上的一个大头针。<br>渲染引擎会使用每一个顶点的法向量来比较该顶点受光时的光照方向和摄像机的面朝方向，为了确定哪些顶点受光照印象。<br>渲染器会慢慢的将光照信息从一个顶点向另外一个顶点来做渐变，这样让基本的3D模型有一个柔和（”pillowy”）的外观。除非你使用纹理（通常状况下你都会这么做）。这会看上去很糟糕，因为它并不是一个完美的柔和的曲面。“pillowy”表面:<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_Normals_and_Smooth.jpg"><br>使用扁平化着色，整个多边形会接受到统一的光照，是按照从多边形的中心统一向外垂直的法向量来计算的。<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_Normals_and_Flat.jpg"></p>
+<p>现代建模程序都会使用“hard edges”和”smoothing groups”来调整模型顶点法向量及相邻多边形是按照扁平化还是归一化方式着色。一些熟练的3D艺术家会使那些比较锋利的边缘看起来变化更平坦，但我们感兴趣的是如何使边缘看起来更锋利和扁平。谢天谢地，Unity可以很简单的视线这个效果。</p>
+<h4 id="Basic_Technique">Basic Technique</h4><p>如果你恨熟悉建模工具的话，你可以通过设置所有边为”hard”来使你的模型看起来扁平化，然而在Unity中你可以简单的通过选择来让Unity帮你自动创建硬边缘:</p>
+<h5 id="步骤1">步骤1</h5><p>点击项目窗口中的模型文件，调出检视面板中的导入设置。<br><img src="/2016/02/21/2016-2-21/import_begin.png"></p>
+<h5 id="步骤2">步骤2</h5><p>进入Normals%Tangents段，在Normals的下拉列表中选择Calculate.<br><img src="/2016/02/21/2016-2-21/import_calculate.png"></p>
+<h5 id="步骤3">步骤3</h5><p>设置Smoothing Angle为0，并点击应用。<br><img src="/2016/02/21/2016-2-21/import_finished.png"></p>
+<p>Unity会使所有锋利的边角都变成硬的边缘。我们想让所有边缘都变成应边缘，所以很自然的将Smoothing Angle设置成0来达到这个效果。</p>
+<p>根据你的模型的几何形状，通过不同的Smoothing angles的设置，我们可以很惊讶的发现这是一个非常简单的方式让一个模型拥有完全不同的外观。<br><img src="/2016/02/21/2016-2-21/import_compare.png"></p>
+<h5 id="步骤4">步骤4</h5><p>既然我们已经有了自己的扁平化着色的模型，我们需要给它上一些颜色!这里有很多方法可以做到，但其中有一些会比另一些要好很多:<br>选择你模型的一部分，并将他们设置成我们想要的不同颜色的材质。<br>在模型程序中指定顶点颜色。<br>创建一个“纹理调色板”，包含一堆正方形颜色的纹理贴图，并把它应用到你的模型上。<br>我非常喜欢最后一种方法，我将想你做如下描述。通常情况下，创建完一个3D模型后，你必须煞费苦心的将它展开来匹配一个手工制作的纹理。但是，因为我们只会对单色多边形感兴趣，它与你的UV展开工作无关，它看起来更香一团杂乱随机的顶点集合，只要他们在正确的颜色上!</p>
+<p>上色的第一步时创建纹理。例如，我们说想要四种颜色:<br><img src="/2016/02/21/2016-2-21/palette_fulcrum.png"></p>
+<p>接下来，加载你的模型并选择你要加载的纹理。选择模型所有的面并按你想要的一个特定颜色展开他们。结果可能会是一堆乱七八糟的多边形。<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_basic_uvunwrap.jpg"></p>
+<p>正如我所说的，这真的不重要，将上面的多边形或香移动和缩放，将他们分别放到你准备的调色板纹理的每个小方块内，拖拽它们匹配你想选择的颜色。<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_basic_uvselect.jpg"></p>
+<p>看一看你的模型；确保纹理选择部分有正确的颜色！为你模型剩下的面重复这个过程，再次选择和展开到你想要的颜色上。如果你犯了一个错误，也不是什么大问题，如果有需要的话，只要重新选择面，重新展开，把它们放在纹理上的正确位置上就行了。同样的不能说这是一个真正的UV展开！<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_basic_finished.jpg"></p>
+<p>就这样，你现在有了一个上色的扁平化模型，你可以导入到你的游戏了。<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_basic_imported.jpg"></p>
+<h4 id="说说其他方法">说说其他方法</h4><p>如果你想知道，这有一些原因避免用另外两个方法:</p>
+<h5 id="多重材质">多重材质</h5><p>这种方法需要创建大量的材质，你必须保持和Unity一致，更重要的是Unity不会动态的合并批次，会为模型的每一种材质进行一次绘制，这往往是现代图形硬件的瓶颈。<br>简单的说，如果你使用了这种方法可能会得到比较糟糕的性能。</p>
+<h5 id="顶点色">顶点色</h5><p>这种方法实际上很不错，在实际中使用这种方法可能取决于你的特定需求活着工作流程。然后你会立刻发现一些东西：当你导入你的模型并使用基础 Diffuse Shader的时候，你的顶点颜色看上去并不显示。</p>
+<p>这是因为基本shader会忽视顶点色属性；你需要使用特殊的shader来使用顶点色数据。这很容易找到，但如果你想要得到其他渲染效果很难从这些支持顶点色的shader中得到。通常这些shader不支持顶点色，你需要自己去修改shader.</p>
+<p>如果你不知道如何写shader, 这会导致游戏内容之外的大量的时间和精力的消耗。但这能紧紧是对于我。但是是我发现改变纹理颜色比在游戏中改变脚本要容易的多。</p>
+<h4 id="优化">优化</h4><p>现在，你有一个调色板纹理和一个基本的technique了，你可以去创造游戏部分中的的剩余模型了。你可以继续添加颜色到调色板，并在整个游戏中使用相同的纹理。</p>
+<p>这么做还有一个很大的性能优势，如果你坚持在整个游戏中使用了相同的材质，Unity通常会将多个对象通过一个”bacth”处理，正如之前所提到的，“Draw calls”是现代图形的一个主要瓶颈，尽量让它达到最小会是一个好主意。</p>
+<p>Unity会自动尝试用最少的”draw calls”调用来绘制。如果你为所有物体都使用单一材质，并且所有模型都被用相同方式缩放，每个模型顶点少于300个，它将在Unity的状态窗口做如下显示:<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_optimize_multi.jpg"><br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_optimize_single.jpg"></p>
+<p>提示:如果你想知道更多关于”batching”的资料，你可以查询Unity的<a href="http://docs.unity3d.com/Documentation/Manual/DrawCallBatching.html" target="_blank" rel="external">相关文档</a> 对游戏性能优化感兴趣的都应该看一看。</p>
+<h4 id="在运行中改变颜色">在运行中改变颜色</h4><p>如果你有一套扁平化着色的模型，并且希望在游戏进行时改变颜色，该怎么办呢？</p>
+<p>例如，当有一个脚本用于产生你的飞机，并且你想让友方飞机是蓝色，让敌方飞机为红色。你可以通过分离调色板或者分离材质来实现，但这就意味着，你在性能方面会有损失，因为两种飞机不同的飞机不能同一个批次处理。</p>
+<p>如果只有少数飞机在视野内显示，这不是一个大问题，然而把程序化地形，成堆的盒子或者其他不同地形类型诸如流行的沙盘游戏，这就意味着成堆的drawcalls产生，但是不用担心，这里有一种方法可以保证只用到一种材质。<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_palette_colorizer.jpg"></p>
+<p>记住你是如何通过堆放UV坐标到一个颜色盒子中来给模型着色的吗？Unity可以让你动态修改模型的顶点，包括UV坐标。对于不同的地形类型你只需要移动UV坐标到正确的颜色盒子中的脚本。</p>
+<p>在Unity中创建一个新的C#脚本 <code>PaletteColorizer</code> 并且粘贴下面的代码:<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PaletteColorizer</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> colorsPerRow = <span class="number">4</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> colorIndex = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">bool</span> overrideUVs = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Awake</span> <span class="params">()</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(!enabled)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		SetUVsToColor(colorIndex);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Update</span><span class="params">()</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetUVsToColor</span><span class="params">(<span class="keyword">int</span> colorIndex)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(overrideUVs)</span><br><span class="line">		&#123;</span><br><span class="line">			SetUVs(gameObject, GetColorOffset(colorIndex));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			TranslateUVs(gameObject, GetColorOffset(colorIndex));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function">Vector2 <span class="title">GetColorOffset</span><span class="params">(<span class="keyword">int</span> colorIndex)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		Vector2 offset = <span class="keyword">new</span> Vector2();</span><br><span class="line">		<span class="keyword">float</span> row = Mathf.Floor(colorIndex / colorsPerRow);</span><br><span class="line">		<span class="keyword">float</span> step = <span class="number">1.0</span>f / colorsPerRow;</span><br><span class="line"></span><br><span class="line">		offset.x = (colorIndex - (row * colorsPerRow)) * step;</span><br><span class="line">		offset.y = (<span class="number">1.0</span>f - (row / colorsPerRow));</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> offset;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">TranslateUVs</span><span class="params">(GameObject obj, Vector2 offset)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> meshFilter = obj.GetComponent();</span><br><span class="line">		Mesh mesh = meshFilter.mesh;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">var</span> newUVs = <span class="keyword">new</span> Vector2[mesh.uv.Length];</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i &lt; mesh.uv.Length; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			newUVs[i] = <span class="keyword">new</span> Vector2(mesh.uv[i].x + offset.x, mesh.uv[i].y + offset.y);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		mesh.uv = newUVs;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetUVs</span><span class="params">(GameObject obj, Vector2 offset)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> meshFilter = obj.GetComponent();</span><br><span class="line">		Mesh mesh = meshFilter.mesh;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">var</span> newUVs = <span class="keyword">new</span> Vector2[mesh.uv.Length];</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i &lt; mesh.uv.Length; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			newUVs[i] = <span class="keyword">new</span> Vector2(offset.x + <span class="number">0.01</span>f, offset.y - <span class="number">0.01</span>f);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		mesh.uv = newUVs;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>要使用这个脚本，只需要将它作为component添加到任何使用调色板纹理材质的游戏对象上，设置每行的颜色数，并且设置颜色索引（从左上角到右下角开始计算，从0开始）。</p>
+<p>如果你的模型UV坐标不适合填充到调色板盒子中（如环绕的水）可以选择<code>Override UVs</code>的复选框，像上面你看到的那样。这将会让脚本重写新的UV坐标，而不改变现有的。</p>
+<p>有一点要记住的是，当你修改任何网格，Unity都会在内存中悄悄的创建一个新的网格，如果你经常这样大量处理网格时，你可能会遇到内存问题。你想象这就意味着缓存中的网格与共享的网格会被同样方式着色。对于一个合理数量的低模网格，你永远也不用担心它的性能。</p>
+<h4 id="烘培环境闭合">烘培环境闭合</h4><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_ao_scene.jpg">
+<p>扁平着色不需要总是多边形块的颜色总是匹配的，你可以添加一些微妙的细节，如现实版的“尘埃”表现。任何表表都可以添加到环境闭合当中去，Unity Pro提供了添加环境闭合的后处理滤镜，但我想告诉你一个额外的方法，不需要pro版本。甚至不需要任何特殊的shader。<br><img src="/2016/02/21/2016-2-21/ao_compare_haus.png"></p>
+<p>左右你需要做的就是展开你的模型，通过环境闭合特效烘培成一张纹理。这需要花些时间和精力正确展开你的模型。但完成展开后只需要动下鼠标点几下就能让你的模型拥有更真实和前卫的外观。</p>
+<h5 id="步骤1-1">步骤1</h5><p>首先你需要启动Blender创建一个空场景：使用快捷键A选中启动场景中的所有物体，按下Delete删除，然后点D确认删除。你不需要任何灯光和摄像机，因为它们将会在导入进Unity时被当作空。</p>
+<h5 id="步骤2-1">步骤2</h5><p>然后，导入你的模型（File&gt;Import&gt;Wavefront(.obj)）.例如我们从一个石块开始。<br><img src="/2016/02/21/2016-2-21/ao_rock_import.png"></p>
+<h5 id="步骤3-1">步骤3</h5><p>打开UV编辑器，并创建一个可以包含大致细节的纹理。我很谨慎，只使用了256x256px大小来处理(岩石和树)，如果你要处理非常大的物体（如可以行走的山）你需要设置成更大。<br><img src="/2016/02/21/2016-2-21/ao_rock_addtexture.png"></p>
+<h5 id="步骤4-1">步骤4</h5><p>现在展开你的模型，这里有很多种方法可以做，比如我想要得到覆盖更多的细节。你可以阅读Blender的文档或者在线教程来学习如何正确有效的展开你的模型。</p>
+<h5 id="步骤5">步骤5</h5><p>现在你已经有了一个展开的模型，你可以准备烘培一个AO到你的纹理上了。Blender可以通过你遵循刚才展开的UV坐标直接将AO渲染进你的纹理。简单步骤如下：</p>
+<pre><code><span class="bullet">1. </span>点击右侧屏幕属性面板上的渲染按钮（相机的图标）
+<span class="bullet">2. </span>展开下拉列表选取Bake选项（在下边）
+<span class="bullet">3. </span>从全局渲染改变成AO烘培模式
+<span class="bullet">4. </span>点击上面的Bake按钮。
+</code></pre><img src="/2016/02/21/2016-2-21/ao_blender_bake_options.gif">
+<img src="/2016/02/21/2016-2-21/ao_blender_generate_ao.gif">
+<h5 id="步骤6">步骤6</h5><p>现在你已经有了一个烘焙AO的纹理和一个UV坐标正确的模型可以使用了，保存纹理徒刑文件，并通过Blender将模型导出成Unity可以识别的格式（例如fbx）</p>
+<h5 id="步骤7">步骤7</h5><p>根据你的需要你只需要使用纹理，可以简单的创建一个Diffuse材质，使用新烘焙的AO纹理并设置颜色让它看起来不错。<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_ao_rock_inscene.jpg"></p>
+<p>然而你希望让模型有多种颜色，如树，你只需要遵循一些额外的步骤。按照上边的指示为你的树模型创建一个烘培好的AO纹理，这个时候，你会想追踪你的UV坐标，因为你需要手动在上边设置颜色。</p>
+<p>将你的UV按颜色划分成组是一个明智的选择，在这个例子中，我们把树的主干部分放在纹理顶部，把叶子部分放在纹理底部。<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_ao_tree_trunk.jpg"><br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_ao_tree_foliage.jpg"></p>
+<h5 id="步骤8">步骤8</h5><p>用画图程序打开你烘培好的AO纹理（任何支持图层的都可以做如：<a href="http://www.gimp.org/" target="_blank" rel="external">GIMP</a>)。创建一个新的图层，把它放在AO图层上，使用AO图层作为颜色指南，根据你从模型上看到的颜色来显示新涂层。</p>
+<p>使用套索（Lasso）或其他工具，选择你想上色的纹理部分，然后填充正确的颜色。<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_ao_tree_texture_brown.jpg"><br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_ao_tree_texture_brownandgreen.jpg"></p>
+<h5 id="步骤9">步骤9</h5><p>你现在要做的事设置颜色，这是最后的任务，在颜色涂层上混合AO图层，移动AO图层到颜色图层上，并改变混合模式为<code>Multiply</code>。<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_ao_tree_texture_multiply.jpg"></p>
+<p>设置涂层不透明度来让效果看起来更好，可以根据你自己的判断调整，但一定要记下这个百分比，因为要做到一个统一的效果在所有需要混合的方法上。<br><img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_ao_tree_texture_multiply_half.jpg"></p>
+<p>保存这个纹理到一个文件中，并将他导入到Unity的树模型上，创建一个和石头一样的材质，使用刚才你制作的纹理。</p>
+<img src="/2016/02/21/2016-2-21/Flat_shaded_3D_in_Unity_ao_tree_inscene.jpg">
+<p>看起来相当不错！使用这个技术在你所有模型上，可以使你的场景相较单纯的扁平着色更精良，真实。</p>
+<p>你可能注意到你的材质只使用了diffuse shader，你可以使用AO直接混合到任何颜色纹理上，只要使用的shader支持Diffuse纹理，这样你不需要任何AO特定代码！</p>
+<h4 id="总结">总结</h4><p>现在你可以方便的使用这个技术来制作一个完整的扁平化着色的游戏了，通过练习，你可以获得更惊人的效果和更高的效率。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>翻译原文<a href="http://gamedevelopment.tutsplus.com/articles/go-beyond-retro-pixel-art-with-flat-shaded-3d-in-unity--gamedev-12259" target="]]>
+    </summary>
+    
+      <category term="3D" scheme="http://tinyflare.com/tags/3D/"/>
+    
+      <category term="Unity" scheme="http://tinyflare.com/tags/Unity/"/>
+    
+      <category term="图形学" scheme="http://tinyflare.com/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+      <category term="基础教程" scheme="http://tinyflare.com/tags/%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="游戏开发" scheme="http://tinyflare.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="程序" scheme="http://tinyflare.com/tags/%E7%A8%8B%E5%BA%8F/"/>
+    
+      <category term="算法" scheme="http://tinyflare.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="翻译" scheme="http://tinyflare.com/categories/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[《地牢笑声》comming soon]]></title>
