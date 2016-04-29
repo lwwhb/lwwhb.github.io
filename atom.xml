@@ -4,7 +4,7 @@
   <subtitle><![CDATA[用心生活，开心做游戏]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://tinyflare.com/"/>
-  <updated>2016-03-30T13:04:00.000Z</updated>
+  <updated>2016-04-29T03:46:37.000Z</updated>
   <id>http://tinyflare.com/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[独立游戏开发者可能会踩到的一些坑]]></title>
+    <link href="http://tinyflare.com/2016/04/29/2016-04-29/"/>
+    <id>http://tinyflare.com/2016/04/29/2016-04-29/</id>
+    <published>2016-04-29T03:08:55.000Z</published>
+    <updated>2016-04-29T03:46:37.000Z</updated>
+    <content type="html"><![CDATA[<p>做独立开发是一个熬人的过程，除了有坚定的信念和情怀，还要忍受寂寞和过错带来的痛苦，下边有一些坑可能会让一些做移动独立开发的人可能会遇到的，希望同道不要掉到同一个坑里去吧。</p>
+<p>1.做独立游戏一定要有好的美术，这个是最重要的，可能你的程序，玩法都很好，但美术差一点这个游戏一样很难出头。<br>2.慎重选择合伙人，一定要选择具体工作上能互补的人来合作，要不可能带来的一些问题会更多。<br>3.如果你对你的游戏美术和玩法特点非常有信心，可以选择付费模式，而不用考虑IAP或广告。<br>4.游戏发行海外选择付费模式，一定不要再加入广告，一旦加入广告，你在流量上带来的损失要远远大于广告带来的收入。<br>5.游戏上线后第二个版本和第一个版本一定不要间隔太短（至少1-2个月，即使有bug），要不在用户损失方面会非常大。<br>6.游戏的本地化一定要非常native，尤其是带梗的游戏。<br>7.付费游戏限免一定要设结束时间，否则无法恢复付费游戏。即使你想靠免费来来带流量。<br>8.Android版本游戏不要做限免。<br>9.Admob广告android版本的收益在同等流量的情况下只会有ios的10分之一，可以选择更好的广告商或android版本选择付费或IAP<br>10.玩家只可能喜欢你的游戏，但不会关注你的死活，要让玩家爱你。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>做独立开发是一个熬人的过程，除了有坚定的信念和情怀，还要忍受寂寞和过错带来的痛苦，下边有一些坑可能会让一些做移动独立开发的人可能会遇到的，希望同道不要掉到同一个坑里去吧。</p>
+<p>1.做独立游戏一定要有好的美术，这个是最重要的，可能你的程序，玩法都很好，但美术差一点这]]>
+    </summary>
+    
+      <category term="原创文章" scheme="http://tinyflare.com/tags/%E5%8E%9F%E5%88%9B%E6%96%87%E7%AB%A0/"/>
+    
+      <category term="开发心得" scheme="http://tinyflare.com/tags/%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97/"/>
+    
+      <category term="独立游戏" scheme="http://tinyflare.com/tags/%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="我的游戏" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[今天把去年做的一款《超级生命》游戏开源了]]></title>
@@ -80,7 +104,7 @@
 <li>最新文档:<a href="www.procore3d.com/docs/probuilder">www.procore3d.com/docs/probuilder</a></li>
 <li>视频教程＋全部信息:<a href="www.procore3d.com/probuilder">www.procore3d.com/probuilder</a></li>
 </ul>
-<h5 id="访问源文件，建立、测试和在线下载地址:">访问源文件，建立、测试和在线下载地址:</h5><p>你必须先注册(转发你的购买发票到<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#99;&#111;&#110;&#x74;&#97;&#x63;&#116;&#64;&#x70;&#x72;&#111;&#99;&#x6f;&#x72;&#101;&#x33;&#x64;&#x2e;&#99;&#111;&#x6d;">&#99;&#111;&#110;&#x74;&#97;&#x63;&#116;&#64;&#x70;&#x72;&#111;&#99;&#x6f;&#x72;&#101;&#x33;&#x64;&#x2e;&#99;&#111;&#x6d;</a>),你可以通过：</p>
+<h5 id="访问源文件，建立、测试和在线下载地址:">访问源文件，建立、测试和在线下载地址:</h5><p>你必须先注册(转发你的购买发票到<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#x63;&#x6f;&#110;&#x74;&#97;&#x63;&#116;&#64;&#112;&#x72;&#x6f;&#x63;&#111;&#x72;&#101;&#51;&#x64;&#46;&#x63;&#x6f;&#x6d;">&#x63;&#x6f;&#110;&#x74;&#97;&#x63;&#116;&#64;&#112;&#x72;&#x6f;&#x63;&#111;&#x72;&#101;&#51;&#x64;&#46;&#x63;&#x6f;&#x6d;</a>),你可以通过：</p>
 <ul>
 <li>在<a href="http://www.procore3d.com/usertoolbox" target="_blank" rel="external">ProCore3D User Toolbox</a>网站注册一个账号，来访问安装文件，包括ProBuilder源代码</li>
 <li>加入Beta测试组来帮助我们更早的测试和构建ProBuilder!</li>
@@ -110,7 +134,7 @@
 <a id="more"></a>
 <h2 id="有用的链接和信息">有用的链接和信息</h2><p><a href="http://www.procore3d.com/" target="_blank" rel="external">网站</a>: 所有ProCore工具，资源及信息的中心</p>
 <h5 id="联系ProCore:">联系ProCore:</h5><ul>
-<li>Email: <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#99;&#111;&#110;&#x74;&#x61;&#99;&#116;&#64;&#x70;&#114;&#111;&#99;&#111;&#x72;&#101;&#x33;&#100;&#x2e;&#99;&#111;&#x6d;">&#99;&#111;&#110;&#x74;&#x61;&#99;&#116;&#64;&#x70;&#114;&#111;&#99;&#111;&#x72;&#101;&#x33;&#100;&#x2e;&#99;&#111;&#x6d;</a></li>
+<li>Email: <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#x63;&#111;&#110;&#x74;&#x61;&#x63;&#x74;&#64;&#x70;&#114;&#111;&#99;&#111;&#x72;&#101;&#51;&#x64;&#46;&#99;&#111;&#x6d;">&#x63;&#111;&#110;&#x74;&#x61;&#x63;&#x74;&#64;&#x70;&#114;&#111;&#99;&#111;&#x72;&#101;&#51;&#x64;&#46;&#99;&#111;&#x6d;</a></li>
 <li>Facebook: <a href="www.facebook.com/probuilder3d">www.facebook.com/probuilder3d</a></li>
 <li>Twitter: <a href="www.twitter.com/probuilder3d">www.twitter.com/probuilder3d</a></li>
 </ul>
@@ -1078,7 +1102,7 @@
 <li>最新文档:<a href="www.procore3d.com/docs/probuilder">www.procore3d.com/docs/probuilder</a></li>
 <li>视频教程＋全部信息:<a href="www.procore3d.com/probuilder">www.procore3d.com/probuilder</a></li>
 </ul>
-<h5 id="访问源文件，建立、测试和在线下载地址:">访问源文件，建立、测试和在线下载地址:</h5><p>你必须先注册(转发你的购买发票到<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#99;&#111;&#110;&#x74;&#97;&#x63;&#116;&#64;&#x70;&#x72;&#111;&#99;&#x6f;&#x72;&#101;&#x33;&#x64;&#x2e;&#99;&#111;&#x6d;">&#99;&#111;&#110;&#x74;&#97;&#x63;&#116;&#64;&#x70;&#x72;&#111;&#99;&#x6f;&#x72;&#101;&#x33;&#x64;&#x2e;&#99;&#111;&#x6d;</a>),你可以通过：</p>
+<h5 id="访问源文件，建立、测试和在线下载地址:">访问源文件，建立、测试和在线下载地址:</h5><p>你必须先注册(转发你的购买发票到<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#x63;&#x6f;&#110;&#x74;&#97;&#x63;&#116;&#64;&#112;&#x72;&#x6f;&#x63;&#111;&#x72;&#101;&#51;&#x64;&#46;&#x63;&#x6f;&#x6d;">&#x63;&#x6f;&#110;&#x74;&#97;&#x63;&#116;&#64;&#112;&#x72;&#x6f;&#x63;&#111;&#x72;&#101;&#51;&#x64;&#46;&#x63;&#x6f;&#x6d;</a>),你可以通过：</p>
 <ul>
 <li>在<a href="http://www.procore3d.com/usertoolbox">ProCore3D User Toolbox</a>网站注册一个账号，来访问安装文件，包括ProBuilder源代码</li>
 <li>加入Beta测试组来帮助我们更早的测试和构建ProBuilder!</li>
