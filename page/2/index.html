@@ -136,6 +136,124 @@
           
           
             
+              <a class="post-title-link" href="/2015/11/14/DungeonGenerationAlgorithm/">
+                程序化地牢生成算法
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            发表于 2015-11-14
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类于
+              
+                <a href="/categories/翻译/">翻译</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/11/14/DungeonGenerationAlgorithm/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/14/DungeonGenerationAlgorithm/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>翻译原文<a href="http://www.gamasutra.com/blogs/AAdonaac/20150903/252889/Procedural_Dungeon_Generation_Algorithm.php">http://www.gamasutra.com/blogs/AAdonaac/20150903/252889/Procedural_Dungeon_Generation_Algorithm.php</a></p>
+<p>这篇文章阐述了一个生成随机地牢的算法，这是由<a href="https://www.reddit.com/r/gamedev/comments/1dlwc4/procedural_dungeon_generation_algorithm_explained/">tinykeepdev</a><a href="http://store.steampowered.com/app/278620/">游戏</a>最早使用的技术。我这里会比原文章更详细的介绍生成步骤。算法步骤是这样工作的:</p>
+<img src="/2015/11/14/DungeonGenerationAlgorithm/wM30Xyl.gif">
+<h4 id="生成房间">生成房间</h4><p>首先你需要在一个圆圈内随机宽高生成一些房间，我认为tinykeep使用的是正太分布的算法来生成房间大小的。这通常是一个好主意，因为你可以给定更多的参数。选择不同的宽高比例和标准差会生成式样不同的地牢。</p>
+<p>你需要做的是一个这样的函数 getRandomPointInCircle:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandomPointInCircle</span>(<span class="title">radius</span>)</span></span><br><span class="line">  <span class="built_in">local</span> t = <span class="number">2</span>*math.<span class="constant">pi</span>*math.<span class="built_in">random</span>()</span><br><span class="line">  <span class="built_in">local</span> u = math.<span class="built_in">random</span>()+math.<span class="built_in">random</span>()</span><br><span class="line">  <span class="built_in">local</span> r = nil</span><br><span class="line">  <span class="keyword">if</span> u &gt; <span class="number">1</span> <span class="keyword">then</span> r = <span class="number">2</span>-u <span class="keyword">else</span> r = u <span class="function"><span class="keyword">end</span></span></span><br><span class="line">  <span class="constant">return</span> radius*r*math.<span class="built_in">cos</span>(t), radius*r*math.<span class="built_in">sin</span>(t)</span><br><span class="line"><span class="function"><span class="keyword">end</span></span></span><br></pre></td></tr></table></figure>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/11/14/DungeonGenerationAlgorithm/#more">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Rougelike/">
+                #Rougelike
+              </a>
+            
+              <a href="/tags/基础教程/">
+                #基础教程
+              </a>
+            
+              <a href="/tags/游戏开发/">
+                #游戏开发
+              </a>
+            
+              <a href="/tags/程序/">
+                #程序
+              </a>
+            
+              <a href="/tags/算法/">
+                #算法
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/10/19/FamiTracker01/">
                 如何使用FamiTracker创建8位音乐
               </a>
@@ -1000,11 +1118,11 @@
       <p class="site-description motion-element">愉快生活，开心做游戏</p>
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </div>
         <div class="site-state-item site-state-tags">
-            <span class="site-state-item-count">27</span>
+            <span class="site-state-item-count">29</span>
             <span class="site-state-item-name">标签</span>
         </div>
         <div class="site-state-item site-state-pages">
