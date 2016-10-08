@@ -4,7 +4,7 @@
   <subtitle><![CDATA[用心生活，开心做游戏]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://tinyflare.com/"/>
-  <updated>2016-09-28T15:51:18.000Z</updated>
+  <updated>2016-10-08T15:35:56.000Z</updated>
   <id>http://tinyflare.com/</id>
   
   <author>
@@ -13,6 +13,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[去年一年上线的三款游戏全部开源，包括美术资源源文件，欢迎游戏开发爱好者Fork]]></title>
+    <link href="http://tinyflare.com/2016/10/08/2016-10-08/"/>
+    <id>http://tinyflare.com/2016/10/08/2016-10-08/</id>
+    <published>2016-10-08T14:32:29.000Z</published>
+    <updated>2016-10-08T15:35:56.000Z</updated>
+    <content type="html"><![CDATA[<p>去年一年一共用cocos2d-x做了三款半游戏《Barrage Space》(弹幕太空)，《Rainbow’s End》(彩虹尽头)，《DungeonLaughter》(地牢笑声)，都已上线，还有半款停止开发了，今年事情太多，不过还在慢慢做，尽管国内7月1日政策已经把小开发者全部杀死了，但程序员还是程序员，游戏人还是游戏人，热情依旧，以后每年做完的游戏，第二年就开源。</p>
+<h3 id="源码地址：https://github-com/lwwhb/MyCocos2dxGame-git">源码地址：<a href="https://github.com/lwwhb/MyCocos2dxGame.git" target="_blank" rel="external">https://github.com/lwwhb/MyCocos2dxGame.git</a></h3><a id="more"></a>
+<h4 id="工程说明">工程说明</h4><h5 id="目录：3-4/TinyFlare_（cocos2dx_3-4版本开发）">目录：3.4/TinyFlare  （cocos2dx 3.4版本开发）</h5><p>《Barrage Space》(弹幕太空)，一款仿《几何战争》的射击游戏，10种敌人，难度不小的一款游戏。</p>
+<p><strong>iTunes下载地址</strong>: <a href="https://itunes.apple.com/us/app/barrage-space/id995591428" target="_blank" rel="external">https://itunes.apple.com/us/app/barrage-space/id995591428</a></p>
+<p><img src="http://a1.mzstatic.com/us/r30/Purple5/v4/59/cb/85/59cb8545-6099-ab11-acca-4ffd043c4b84/screen520x924.jpeg" alt="Barrage Space"></p>
+<p><img src="http://a4.mzstatic.com/us/r30/Purple7/v4/7b/8b/94/7b8b949b-3212-d3ee-4771-6907def7f3e8/screen520x924.jpeg" alt="Barrage Space"></p>
+<h5 id="目录:_3-6/MazeJump_（cocos2dx_3-6版本开发）">目录: 3.6/MazeJump （cocos2dx 3.6版本开发）</h5><p>《Rainbow’s End》(彩虹尽头), 是一款体素风格的跑酷兼解密类游戏，只花了28天完成，其中解密部分的想法来自参加2015年7月北京的GameJam的作品的改进。</p>
+<p><strong>iTunes下载地址</strong>: <a href="https://itunes.apple.com/cn/app/rainbows-end/id1031110631" target="_blank" rel="external">https://itunes.apple.com/cn/app/rainbows-end/id1031110631</a></p>
+<p><strong>GooglePlay下载地址</strong>: <a href="https://play.google.com/store/apps/details?id=com.wanax.mazejump" target="_blank" rel="external">https://play.google.com/store/apps/details?id=com.wanax.mazejump</a></p>
+<p><img src="http://a4.mzstatic.com/us/r30/Purple7/v4/a6/aa/f2/a6aaf2d8-3b8c-35fd-aa65-73654524059e/screen696x696.jpeg" alt="Rainbow&#39;s End"></p>
+<h5 id="目录:_3-8-1／Voxel_Explorer_（cocos2dx_3-8-1版本开发）">目录: 3.8.1／Voxel_Explorer （cocos2dx 3.8.1版本开发）</h5><p>《DungeonLaughter》(地牢笑声)，这是一款Rougelike游戏，自动随机生成地牢怪物，随机属性装备，共6个Boss，整体数值全是程序生成，无任何配置数据，各个系统比较完善，可玩性是以上三款中最高，一共花了4个半月完成。其中美术资源花了近1个半月。</p>
+<p><strong>IOS 下载地址</strong>：<a href="https://itunes.apple.com/cn/app/dungeon-laughter/id1050626034" target="_blank" rel="external">https://itunes.apple.com/cn/app/dungeon-laughter/id1050626034</a></p>
+<p><strong>GooglePlay 下载地址</strong>：<a href="https://play.google.com/store/apps/details?id=com.wanax.voxelexplorer" target="_blank" rel="external">https://play.google.com/store/apps/details?id=com.wanax.voxelexplorer</a></p>
+<p><img src="http://a2.mzstatic.com/us/r30/Purple69/v4/42/4a/5c/424a5cad-5828-283f-0741-6f455cfdd905/screen696x696.jpeg" alt="DungeonLaughter"></p>
+<h5 id="目录:_3-8-1／Tone_Skipper">目录: 3.8.1／Tone_Skipper</h5><p>本来是想做一款横版过关类的游戏，类似秘密潜入类，靠男女主角和一只狗三者的技能配合过关的，但个人的美术能力和画面表现让我没有信心做下去了，只做了一个Demo关卡。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>去年一年一共用cocos2d-x做了三款半游戏《Barrage Space》(弹幕太空)，《Rainbow’s End》(彩虹尽头)，《DungeonLaughter》(地牢笑声)，都已上线，还有半款停止开发了，今年事情太多，不过还在慢慢做，尽管国内7月1日政策已经把小开发者全部杀死了，但程序员还是程序员，游戏人还是游戏人，热情依旧，以后每年做完的游戏，第二年就开源。</p>
+<h3 id="源码地址：https://github-com/lwwhb/MyCocos2dxGame-git">源码地址：<a href="https://github.com/lwwhb/MyCocos2dxGame.git">https://github.com/lwwhb/MyCocos2dxGame.git</a></h3>]]>
+    
+    </summary>
+    
+      <category term="cocos2d-x" scheme="http://tinyflare.com/tags/cocos2d-x/"/>
+    
+      <category term="代码开源" scheme="http://tinyflare.com/tags/%E4%BB%A3%E7%A0%81%E5%BC%80%E6%BA%90/"/>
+    
+      <category term="我的游戏" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[欢迎关注微信公众号]]></title>
@@ -191,7 +227,7 @@
 <li>最新文档:<a href="www.procore3d.com/docs/probuilder">www.procore3d.com/docs/probuilder</a></li>
 <li>视频教程＋全部信息:<a href="www.procore3d.com/probuilder">www.procore3d.com/probuilder</a></li>
 </ul>
-<h5 id="访问源文件，建立、测试和在线下载地址:">访问源文件，建立、测试和在线下载地址:</h5><p>你必须先注册(转发你的购买发票到<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#99;&#x6f;&#x6e;&#116;&#x61;&#x63;&#116;&#x40;&#112;&#x72;&#111;&#x63;&#x6f;&#114;&#101;&#x33;&#100;&#46;&#x63;&#x6f;&#x6d;">&#99;&#x6f;&#x6e;&#116;&#x61;&#x63;&#116;&#x40;&#112;&#x72;&#111;&#x63;&#x6f;&#114;&#101;&#x33;&#100;&#46;&#x63;&#x6f;&#x6d;</a>),你可以通过：</p>
+<h5 id="访问源文件，建立、测试和在线下载地址:">访问源文件，建立、测试和在线下载地址:</h5><p>你必须先注册(转发你的购买发票到<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#x63;&#x6f;&#x6e;&#116;&#97;&#x63;&#116;&#x40;&#112;&#114;&#x6f;&#x63;&#111;&#x72;&#x65;&#51;&#x64;&#46;&#x63;&#111;&#109;">&#x63;&#x6f;&#x6e;&#116;&#97;&#x63;&#116;&#x40;&#112;&#114;&#x6f;&#x63;&#111;&#x72;&#x65;&#51;&#x64;&#46;&#x63;&#111;&#109;</a>),你可以通过：</p>
 <ul>
 <li>在<a href="http://www.procore3d.com/usertoolbox" target="_blank" rel="external">ProCore3D User Toolbox</a>网站注册一个账号，来访问安装文件，包括ProBuilder源代码</li>
 <li>加入Beta测试组来帮助我们更早的测试和构建ProBuilder!</li>
@@ -221,7 +257,7 @@
 <a id="more"></a>
 <h2 id="有用的链接和信息">有用的链接和信息</h2><p><a href="http://www.procore3d.com/" target="_blank" rel="external">网站</a>: 所有ProCore工具，资源及信息的中心</p>
 <h5 id="联系ProCore:">联系ProCore:</h5><ul>
-<li>Email: <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x63;&#111;&#x6e;&#116;&#97;&#99;&#x74;&#64;&#x70;&#x72;&#x6f;&#x63;&#111;&#114;&#x65;&#51;&#100;&#46;&#99;&#111;&#109;">&#x63;&#111;&#x6e;&#116;&#97;&#99;&#x74;&#64;&#x70;&#x72;&#x6f;&#x63;&#111;&#114;&#x65;&#51;&#100;&#46;&#99;&#111;&#109;</a></li>
+<li>Email: <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#99;&#x6f;&#x6e;&#116;&#97;&#99;&#x74;&#64;&#x70;&#x72;&#x6f;&#x63;&#111;&#114;&#x65;&#51;&#100;&#46;&#99;&#x6f;&#109;">&#99;&#x6f;&#x6e;&#116;&#97;&#99;&#x74;&#64;&#x70;&#x72;&#x6f;&#x63;&#111;&#114;&#x65;&#51;&#100;&#46;&#99;&#x6f;&#109;</a></li>
 <li>Facebook: <a href="www.facebook.com/probuilder3d">www.facebook.com/probuilder3d</a></li>
 <li>Twitter: <a href="www.twitter.com/probuilder3d">www.twitter.com/probuilder3d</a></li>
 </ul>
@@ -1189,7 +1225,7 @@
 <li>最新文档:<a href="www.procore3d.com/docs/probuilder">www.procore3d.com/docs/probuilder</a></li>
 <li>视频教程＋全部信息:<a href="www.procore3d.com/probuilder">www.procore3d.com/probuilder</a></li>
 </ul>
-<h5 id="访问源文件，建立、测试和在线下载地址:">访问源文件，建立、测试和在线下载地址:</h5><p>你必须先注册(转发你的购买发票到<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#99;&#x6f;&#x6e;&#116;&#x61;&#x63;&#116;&#x40;&#112;&#x72;&#111;&#x63;&#x6f;&#114;&#101;&#x33;&#100;&#46;&#x63;&#x6f;&#x6d;">&#99;&#x6f;&#x6e;&#116;&#x61;&#x63;&#116;&#x40;&#112;&#x72;&#111;&#x63;&#x6f;&#114;&#101;&#x33;&#100;&#46;&#x63;&#x6f;&#x6d;</a>),你可以通过：</p>
+<h5 id="访问源文件，建立、测试和在线下载地址:">访问源文件，建立、测试和在线下载地址:</h5><p>你必须先注册(转发你的购买发票到<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#x63;&#x6f;&#x6e;&#116;&#97;&#x63;&#116;&#x40;&#112;&#114;&#x6f;&#x63;&#111;&#x72;&#x65;&#51;&#x64;&#46;&#x63;&#111;&#109;">&#x63;&#x6f;&#x6e;&#116;&#97;&#x63;&#116;&#x40;&#112;&#114;&#x6f;&#x63;&#111;&#x72;&#x65;&#51;&#x64;&#46;&#x63;&#111;&#109;</a>),你可以通过：</p>
 <ul>
 <li>在<a href="http://www.procore3d.com/usertoolbox">ProCore3D User Toolbox</a>网站注册一个账号，来访问安装文件，包括ProBuilder源代码</li>
 <li>加入Beta测试组来帮助我们更早的测试和构建ProBuilder!</li>
@@ -1893,25 +1929,6 @@
     </summary>
     
       <category term="gamejam" scheme="http://tinyflare.com/tags/gamejam/"/>
-    
-      <category term="感悟" scheme="http://tinyflare.com/tags/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="我的生活" scheme="http://tinyflare.com/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[新的起点]]></title>
-    <link href="http://tinyflare.com/2015/07/18/new_start_point/"/>
-    <id>http://tinyflare.com/2015/07/18/new_start_point/</id>
-    <published>2015-07-18T07:51:27.000Z</published>
-    <updated>2015-07-19T02:04:31.000Z</updated>
-    <content type="html"><![CDATA[<img src="/2015/07/18/new_start_point/logo.png">
-<h5 id="今天开始独立游戏之旅，上路，加油～">今天开始独立游戏之旅，上路，加油～</h5>]]></content>
-    <summary type="html">
-    <![CDATA[<img src="/2015/07/18/new_start_point/logo.png">
-<h5 id="今天开始独立游戏之旅，上路，加油～">今天开始独立游戏之旅，上路，加油～</h5>]]>
-    </summary>
     
       <category term="感悟" scheme="http://tinyflare.com/tags/%E6%84%9F%E6%82%9F/"/>
     
