@@ -20,9 +20,9 @@
 
 
 
-	<meta name="keywords" content="原创文章,开发心得,独立游戏," />
+	<meta name="keywords" content="基础教程,游戏开发,游戏设计," />
 
-  <title> 独立游戏开发者可能会踩到的一些坑 // TinyFlare </title>
+  <title> 视频游戏关卡设计新手指南 // TinyFlare </title>
 </head>
 
 <body>
@@ -111,7 +111,7 @@
           
           
             
-              独立游戏开发者可能会踩到的一些坑
+              视频游戏关卡设计新手指南
             
           
         </h1>
@@ -120,7 +120,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            发表于 2016-04-29
+            发表于 2016-10-16
           
         </span>
 
@@ -129,7 +129,7 @@
             <span class="post-category">
               &nbsp; | &nbsp; 分类于
               
-                <a href="/categories/我的游戏/">我的游戏</a>
+                <a href="/categories/翻译/">翻译</a>
 
                 
                 
@@ -143,8 +143,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2016/04/29/2016-04-29/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/29/2016-04-29/"></span>
+            <a href="/2016/10/16/2016-10-16/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/16/2016-10-16/"></span>
             </a>
           </span>
           
@@ -159,8 +159,114 @@
         
 
         
-          <p>做独立开发是一个熬人的过程，除了有坚定的信念和情怀，还要忍受寂寞和过错带来的痛苦，下边有一些坑可能会让一些做移动独立开发的人可能会遇到的，希望同道不要掉到同一个坑里去吧。</p>
-<p>1.做独立游戏一定要有好的美术，这个是最重要的，可能你的程序，玩法都很好，但美术差一点这个游戏一样很难出头。<br>2.慎重选择合伙人，一定要选择具体工作上能互补的人来合作，要不可能带来的一些问题会更多。<br>3.如果你对你的游戏美术和玩法特点非常有信心，可以选择付费模式，而不用考虑IAP或广告。<br>4.游戏发行海外选择付费模式，一定不要再加入广告，一旦加入广告，你在流量上带来的损失要远远大于广告带来的收入。<br>5.游戏上线后第二个版本和第一个版本一定不要间隔太短（至少1-2个月，即使有bug），要不在用户损失方面会非常大。<br>6.游戏的本地化一定要非常native，尤其是带梗的游戏。<br>7.付费游戏限免一定要设结束时间，否则无法恢复付费游戏。即使你想靠免费来来带流量。<br>8.Android版本游戏不要做限免。<br>9.Admob广告android版本的收益在同等流量的情况下只会有ios的10分之一，可以选择更好的广告商或android版本选择付费或IAP<br>10.玩家只可能喜欢你的游戏，但不会关注你的死活，要让玩家爱你。</p>
+          <p>   在这片教程里，我将基于过去的游戏设计经验来解释如何为饰品游戏设计关卡。我不会在个人过去经验内容不分太过深入介绍，而是给出一个更高层次的制作流程概要。</p>
+<p>   我会带你通过一个例子从头开始创建一个关卡，所以你可以从每个阶段过程中看到典型的结果。</p>
+<p>   <strong>步骤1: 了解需求</strong> 我会带你了解关卡设计过程中的一些通用需求</p>
+<p>   <strong>步骤2: 头脑风暴与架构</strong> 我会想你展示如何界定把什么设计带入到关卡中</p>
+<p>   <strong>步骤3: 气泡简图</strong> 我将向你介绍一个可视化方法，来列出你的关卡中每一个区域的东西。</p>
+<p>   <strong>步骤4: 粗略的地图</strong> 我会谈谈如何充实每个气泡区域，并如何进入相连的每个区域。我可以写一个关于如何做到这一点的系列教程，所以今天这里指挥写个基本轮廓。</p>
+<p>   <strong>步骤5: 完成设计</strong> 我们将讨论从基础设计到创建最终空间。这也是一个大话题，我们可以进一步讨论在其他的教程中，所以这个教程基本只讨论最基础的。</p>
+<a id="more"></a>
+<h2 id="1-了解需求">1.了解需求</h2><p>在设计的一开始，最困难的部分是弄清楚关卡中要有什么，作为一名关卡设计师，你想要做的东西很多，但当你在一个大的团队中，你不可能总是要做成所有事。</p>
+<p>在一个大型团队中，大部分的需求来自于团队中的其他人，这里有业务的需求，许可的需求，玩家的需求，法律的需求，引擎的需求。大多数时间，会有更多的需求来自更多的外部条件。</p>
+<p>创意总监与艺术总监的视觉上的要求会给你带来需求，任何人在关卡的视觉表现上都可以发表自己的意见。如果你是一个独立开发者，你可以自己做这些要求，但你需要更好的理解这些需求。</p>
+<h3 id="一般需求">一般需求</h3><p>这里有一些一般的需求在你设计一个关卡时要时刻保持注意。在过去的工作中，我发现这些需求适应于大多数游戏。在下边展示的关卡中，我来提供一个例子答案来回答这些需求问题，并且我是用下列这些需求示例来在本教程中构建一个关卡。</p>
+<h4 id="一个关卡需要有多长？">一个关卡需要有多长？</h4><p>这是一个短关卡，最长大概30分钟。</p>
+<h4 id="我们是否要尝试展示新的技术，美术效果、音乐效果或者类似的要求？">我们是否要尝试展示新的技术，美术效果、音乐效果或者类似的要求？</h4><p>我们假设游戏引擎支持很酷的室内灯光效果，所以我们想只做一些很酷的室内空间。</p>
+<h4 id="我需要多长时间来设计它？">我需要多长时间来设计它？</h4><p>写这片文章的这几个月的过程中，每个关卡在设计方面大概需要2-3天的时间。</p>
+<pre><code><span class="keyword">*</span><span class="keyword">*</span>注<span class="keyword">*</span><span class="keyword">*</span>：我希望大概花5个星期的时间来完成整个游戏的关卡设计。
+</code></pre><h4 id="如果有人愿意为这个游戏付钱，它们的要求是什么？">如果有人愿意为这个游戏付钱，它们的要求是什么？</h4><p>如果不是教程例子的游戏，这些要求通常会来自发行商，投资者或着市场部门等等。</p>
+<h4 id="游戏要上什么平台">游戏要上什么平台</h4><p>你做的游戏要符合平台的需求，一个手机游戏不能要求太高的处理能力，一个PS4或着PC上的虚拟现实游戏要注意摄像机移动的需求，避免产生移动带来的头晕，移动游戏需要有长度需求，因为人们都是利用空闲时间来玩的，你需要了解这些需求。</p>
+<p>在这个例子中，我们的目标平台是上一代的游戏主机(PS3，XBox 360)或PC。</p>
+<h4 id="这些游戏关卡要符合游戏什么进度？">这些游戏关卡要符合游戏什么进度？</h4><p>这里的例子是游戏的第三关，所以挑战不会很难。</p>
+<h4 id="用户是谁？">用户是谁？</h4><p>这是一个科幻游戏，非常暴力，它要适合M(18+)的评级。我们的核心用户是超过18岁的硬核游戏玩家。</p>
+<h3 id="最关键的需求">最关键的需求</h3><p>如果你发现自己很幸运有人愿意花钱请你设计关卡，记住它们它们要做这个游戏的原因是什么，如果你不清楚这个点，它们不会付款。或者说你工作的工作室聘请你为它们工作主要要的客户要求点是什么。</p>
+<p>在过去项目的经验中，无论是为自己还是为其他人设计中，我发现最重要的4个关键性问题是：</p>
+<ul>
+<li>关卡设计的故事和主题情节是什么？</li>
+<li>关卡的要求是什么？</li>
+<li>关卡有什么需求指标？</li>
+<li>在这个关卡中游戏的“宏观设计”是什么？</li>
+</ul>
+<p>让我们来看看每一个问题，按顺序来：</p>
+<h4 id="关卡设计的故事和主题情节是什么？">关卡设计的故事和主题情节是什么？</h4><p>这个例子的目标是拯救一个被困在军事设施中的VIP,然后通过直升机离开。</p>
+<h4 id="关卡的要求是什么？">关卡的要求是什么？</h4><p>这个例子的要求：</p>
+<ul>
+<li>昏暗的走廊，照明良好的楼梯间。很酷的武器开火投影提示。</li>
+<li>在靠近中部的一个被摧毁的军营中与一个巨大怪物战斗。</li>
+<li>VIP所在地的控制塔。</li>
+</ul>
+<h4 id="关卡有什么需求指标？">关卡有什么需求指标？</h4><p>你设计的每一个区域都需要考虑玩家的移动速度，玩家的大小，怪物的大小，跳跃高度等等。</p>
+<p>每一个信息都预示了你的走廊和空间要有多大，多高，以及跳跃的长度。</p>
+<h4 id="在这个关卡中游戏的“宏观设计”是什么？">在这个关卡中游戏的“宏观设计”是什么？</h4><p>在一个游戏开发的早期，一个简短的文档来描述每一个关卡大概情况时非常必要的。(关于宏观设计的更多信息请看这篇文章<a href="https://www.youtube.com/watch?v=QOAW9ioWAvE" target="_blank" rel="external">D.I.C.E.2002speech by Mark Cerny</a>)</p>
+<p>宏观设计文档特别要指出每一个关卡什么样的谜题，什么样的敌人，多少可使用的道具，你可以获得什么样的奖励，以及一些自然表现层面的东西。这些都对你的设计提出了近一步的需求。</p>
+<p>对于我们的例子，我们有这些宏观需求:</p>
+<ol>
+<li><p>这个是单人第一人称战斗游戏。 没有谜题，只有简单的4种敌人：</p>
+<p>远程: 敌人站着设计玩家。<br>近战: 敌人运动接近玩家用武器攻击玩家。<br>群组: 一个小型成群的近战敌人，成群的攻击玩家。<br>重型: 一个巨大的敌人，能造成大量伤害，并且兼具远程与近战攻击，需要受到大量攻击才能杀死。</p>
+</li>
+<li><p>一旦玩家解救了VIP，需要有快捷方式回到游戏起始点，玩家不需要再重复整个事件了。</p>
+</li>
+<li>VIP设置在最终战斗房间，她被一些精英士兵囚禁着。</li>
+</ol>
+<h2 id="2-头脑风暴与架构">2.头脑风暴与架构</h2><h3 id="提出想法">提出想法</h3><p>一旦清楚了你的需求，就要开始头脑风暴, 例如：</p>
+<ul>
+<li>我们需要一些内景，所以我们决定设计一个地下基地。</li>
+<li>玩家通过直升飞机的垂直长杆进入基地，所以我们的关卡会在这个的底部。</li>
+<li>敌人摧毁了这个的地方，所以这个地方被撕裂了，几个区域应该是被摧毁的。</li>
+<li>我想要和敌人在不同的高度战斗，所以我们需要安排一个很长的楼梯间来安排战斗序列。</li>
+<li>这里不是一个真正的关卡设计，所以我们在本文中尽量采用线性设计来保证文章尽可能的清楚。</li>
+<li>其他。。。</li>
+</ul>
+<h3 id="细化到每个区域">细化到每个区域</h3><p>当我设计一个关卡，我习惯用不同的区域来表述一个关卡，这可以把我的工作打碎到每一个可管理的区块，让设计变的容易。区域对于关卡中的区块是一个松散的术语，任何任意形状，大小或位置。对某事物是否是一个区域的真正的标准是，它必须能帮助你更快的思考和完成工作。请不要担心这样的想法会让事情变得复杂。</p>
+<p>对于我们的例子，我想让玩家学会单独的认识新的敌人，并且在教程关卡中将敌人很好组合到一起，这样会让一切变的更复杂，这样做会让游戏有一个好的游戏难度坡度。</p>
+<p>为了做到这一点，我通常会从七个区域来完成工作，(解释为什么远远超出了本文的范围，但你可以阅读<a href="http://www.chaoticstupid.com/the-rule-of-seven/" target="_blank" rel="external">Rule of Seven</a>来了解这样做的好处),当然我需要一个最终区域做些事情，如做一个房间用来解救VIP, 我通常添加一个额外区域，对于这个例子意味着我们要设计8个区域。</p>
+<p>对于每一个区域，我们需要匹配我们最基本的想法和需求。所以下面有一个列表来说明我的关卡结构：</p>
+<ol>
+<li>直升机平台：关卡起点；安全－没有敌人。</li>
+<li>计算机房: 一场战斗遇到2个远程敌人，你身后的路会被关闭（单向）。</li>
+<li>狭窄的走廊: 四场战斗，介绍近战和群组类敌人。</li>
+<li>被摧毁的军营: 一场遭遇战；介绍重装敌人；狭小的空间。</li>
+<li>兵营2: 在你身后的小路，一场与近战，远程与重装敌人的遭遇战。</li>
+<li>走廊2: 一场与近战，远程敌人的遭遇战。</li>
+<li>大楼梯： 垂直方向面对敌人，三场遇到所有类型敌人的遭遇战。</li>
+<li>损坏的控制塔的房间: 一场遭遇2个重装敌人和一些群组敌人的最终战，我们需要一个单向退回到开始点的路，VIP位于这个房间与快速返回开始点之间。</li>
+</ol>
+<h2 id="气泡图">气泡图</h2><p>在我投入时间和精力去做最后的设计前，在引擎里做一些事情甚至需要开始考虑个别的区域。我一直想有一个整体的感觉来指导关卡是如何流转的，这可以使我不犯错误去重新设计。</p>
+<p>为了让整个关卡可视化，并且知道各个区域是如何连接的，我们需要一个气泡图。</p>
+<h3 id="气泡图-1">气泡图</h3><p>一个气泡图示整个关卡的最简单的地图，圆圈表示场景中的各个区域，而箭头表示区域直接的连接和流动关系。</p>
+<p>在第二阶段头脑风暴阶段，我们想出了关卡的所有片段。气泡图可以帮助你可视化关卡中的各个碎片，并把它们联系起来。也有助你梳理整个关卡的路径，<a href="http://www.chaoticstupid.com/trinity-8-paths/" target="_blank" rel="external">什么样的路径结构才是最好适合你的目标</a>。</p>
+<p>这个气泡图是我用来表示我们例子关卡的线性图，有两种类型的箭头（双向与单向）。</p>
+<img src="/2016/10/16/2016-10-16/BubbleDiagram01.png">
+<p><strong>我们例子关卡的气泡图 注： 图中的数字表示之前章节中的8个区域</strong></p>
+<p>每一个设计师都想要做一些小小的不同，这是OK的！唯一的要求是，你必须保证它和最终产品是保持一致的。 制作气泡图的一部分功能是要将你的想法传达给其他人。所以在创建气泡图时就要把这点记住。</p>
+<p>注：可以参考喔之前的文章<a href="http://gamedevelopment.tutsplus.com/articles/level-design-views-and-vistas--cms-25036" target="_blank" rel="external">Views and Vistas</a>, 这是一个决定想法往哪去的很好的阶段。</p>
+<h2 id="粗略的地图">粗略的地图</h2><h3 id="设计每个气泡">设计每个气泡</h3><p>一旦气泡图完成了，我们就知道我们的场景大概是个什么样子了，并且我们知道了每个区域与另外区域相联的关系。</p>
+<p>下一步就是执行列表，并为每个气泡创建粗略的设计。我几乎是在纸上或Illustrator上完成的，因为这是我学到的，但我知道一些伟大的设计师会在引擎中获得更好的空间灵感。无论怎么样选择，能加速工作的方式就是最好的。</p>
+<p>下面，我们看其中一个气泡的例子（特别注意第三个气泡：紧凑的走廊），我在纸上自上而下的设计了它。</p>
+<img src="/2016/10/16/2016-10-16/OneBubble_Graph.jpg">
+<p>玩家从这个区域的顶部开始到底部。这个区域是用来从一个正确的方向来让玩家遇到敌人。</p>
+<p>我下面解释：</p>
+<ol>
+<li>玩家从南边进来遇到3场群组类敌人战斗。当玩家转过拐角，4波群组类敌人会从龛室内冲出。</li>
+<li>在转过第二个转角，玩家会面对面遇到一个近战类敌人。这个敌人需要靠近一定距离后才发起攻击。所以转过转角就不会显得特别平淡。</li>
+<li>转过第三个转角，玩家会与一大群群组敌人战斗，连同一个近战敌人从背后攻击。群组类敌人从下一个拐角处的龛室靠近玩家。</li>
+<li>玩家通过第四个拐角并且转到第五个转角遇到三个远程敌人。以三个龛室做掩护，并且五波群组类敌人冲过来。</li>
+<li>转过最后一个拐角，玩家会来到进入气泡4的区域。</li>
+</ol>
+<p>注： 这个区域如何设计是与其他区域隔开，可以做考虑比例关系，但要注意距离和高度是否合适。</p>
+<p>在这个粗略设计阶段，真的对快速改变设计有很好帮助，所以我不会拍定细节，知道决定完成设计。我要试图保证所有区域之间比例关系的一致性，这可以让我进入下一个将各个区域连接起来的工作变的更加容易。</p>
+<p>必要太关注精确性和小细节，东西的设计不断的改变，一只从现在到最后游戏成型。（即使我们完成最终的设计）。</p>
+<h3 id="连接所有区域在一起">连接所有区域在一起</h3><p>在讨论每个气泡和在纸上完成它们的粗略设计之后，应该把它们连接到一起（粗略的先）。为了可读性，我在Adobe Illustrator中完成了，当然这可以在纸上做的更好。</p>
+<img src="/2016/10/16/2016-10-16/2D-rough-level-map.jpg">
+<p>请注意这些区域是如何结束的，所以我知道它们是如何连接的。但我还没有完成所有的设计。</p>
+<p>尝试<a href="http://www.chaoticstupid.com/trinity-6-intensity-ramps/" target="_blank" rel="external">提升游戏的难度</a>，通过一个个区域，确保你将所有的<a href="http://www.chaoticstupid.com/trinity-5-setups/" target="_blank" rel="external">敌人类型组合</a>。以保证<a href="http://www.chaoticstupid.com/trinity-7-ramps-part-2/" target="_blank" rel="external">战斗、谜题的难度，复杂度和强度持续增加</a>。</p>
+<p>确保在战斗强度之间时适当添加休息点，如果你一只保持10的强度，将休息点的强度变成5.</p>
+<p>最终产品（如上图所示）是我所说的一个粗略的地图。</p>
+<h2 id="完成设计">完成设计</h2><p>这一步是完成所有区域如何在物理空间上连接，所有转换都完成了并且确定一切的高度和距离。</p>
+<p>不同的设计师会以不同的方式来制作此步。许多设计师喜欢直接进入引擎来构建这些，这当然是伟大的。而我喜欢完成二维的地图。这往往相对于直接在引擎中构建要慢一点，最好的方法是什么方法使你的工作更快你就采用什么方法。</p>
+<img src="/2016/10/16/2016-10-16/2DMap_Full-03.jpg">
+<p>注：橙色盒子是触发器，在一个房间里的敌人不回主动攻击玩家知道玩家与触发器发生碰撞。<br><a href="https://cms-assets.tutsplus.com/uploads/users/1159/posts/25662/attachment/FinalTutorialMap.pdf" target="_blank" rel="external">最终地图的大图</a></p>
 
         
       </div>
@@ -171,16 +277,16 @@
         
           <div class="post-tags">
             
-              <a href="/tags/原创文章/">
-                #原创文章
+              <a href="/tags/基础教程/">
+                #基础教程
               </a>
             
-              <a href="/tags/开发心得/">
-                #开发心得
+              <a href="/tags/游戏开发/">
+                #游戏开发
               </a>
             
-              <a href="/tags/独立游戏/">
-                #独立游戏
+              <a href="/tags/游戏设计/">
+                #游戏设计
               </a>
             
           </div>
@@ -190,13 +296,11 @@
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2016/06/30/2016-6-30/">独立开发者路在何方？</a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2016/03/30/superlife-2016-03-30/">今天把去年做的一款《超级生命》游戏开源了</a>
+                <a href="/2016/10/08/2016-10-08/">去年一年上线的三款游戏全部开源，包括美术资源源文件，欢迎游戏开发爱好者Fork</a>
               
             </div>
           </div>
@@ -213,8 +317,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2016/04/29/2016-04-29/"
-             data-title="独立游戏开发者可能会踩到的一些坑" data-url="http://tinyflare.com/2016/04/29/2016-04-29/">
+        <div class="ds-thread" data-thread-key="2016/10/16/2016-10-16/"
+             data-title="视频游戏关卡设计新手指南" data-url="http://tinyflare.com/2016/10/16/2016-10-16/">
         </div>
 
       
@@ -300,7 +404,7 @@
         <div class="post-toc">
           
           
-            <p class="post-toc-empty">此文章未包含目录</p>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-了解需求"><span class="nav-number">1.</span> <span class="nav-text">1.了解需求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一般需求"><span class="nav-number">1.1.</span> <span class="nav-text">一般需求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一个关卡需要有多长？"><span class="nav-number">1.1.1.</span> <span class="nav-text">一个关卡需要有多长？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们是否要尝试展示新的技术，美术效果、音乐效果或者类似的要求？"><span class="nav-number">1.1.2.</span> <span class="nav-text">我们是否要尝试展示新的技术，美术效果、音乐效果或者类似的要求？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我需要多长时间来设计它？"><span class="nav-number">1.1.3.</span> <span class="nav-text">我需要多长时间来设计它？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果有人愿意为这个游戏付钱，它们的要求是什么？"><span class="nav-number">1.1.4.</span> <span class="nav-text">如果有人愿意为这个游戏付钱，它们的要求是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#游戏要上什么平台"><span class="nav-number">1.1.5.</span> <span class="nav-text">游戏要上什么平台</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这些游戏关卡要符合游戏什么进度？"><span class="nav-number">1.1.6.</span> <span class="nav-text">这些游戏关卡要符合游戏什么进度？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户是谁？"><span class="nav-number">1.1.7.</span> <span class="nav-text">用户是谁？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最关键的需求"><span class="nav-number">1.2.</span> <span class="nav-text">最关键的需求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关卡设计的故事和主题情节是什么？"><span class="nav-number">1.2.1.</span> <span class="nav-text">关卡设计的故事和主题情节是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关卡的要求是什么？"><span class="nav-number">1.2.2.</span> <span class="nav-text">关卡的要求是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关卡有什么需求指标？"><span class="nav-number">1.2.3.</span> <span class="nav-text">关卡有什么需求指标？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在这个关卡中游戏的“宏观设计”是什么？"><span class="nav-number">1.2.4.</span> <span class="nav-text">在这个关卡中游戏的“宏观设计”是什么？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-头脑风暴与架构"><span class="nav-number">2.</span> <span class="nav-text">2.头脑风暴与架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提出想法"><span class="nav-number">2.1.</span> <span class="nav-text">提出想法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#细化到每个区域"><span class="nav-number">2.2.</span> <span class="nav-text">细化到每个区域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#气泡图"><span class="nav-number">3.</span> <span class="nav-text">气泡图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#气泡图-1"><span class="nav-number">3.1.</span> <span class="nav-text">气泡图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粗略的地图"><span class="nav-number">4.</span> <span class="nav-text">粗略的地图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计每个气泡"><span class="nav-number">4.1.</span> <span class="nav-text">设计每个气泡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接所有区域在一起"><span class="nav-number">4.2.</span> <span class="nav-text">连接所有区域在一起</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成设计"><span class="nav-number">5.</span> <span class="nav-text">完成设计</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
